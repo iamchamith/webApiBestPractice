@@ -1,0 +1,5 @@
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Bo\bin\Debug\One.Bo.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Bo\bin\Debug\One.Bo.pdb
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Bo\obj\Debug\One.Bo.csprojResolveAssemblyReference.cache
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Bo\obj\Debug\One.Bo.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Bo\obj\Debug\One.Bo.pdb

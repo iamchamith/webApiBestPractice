@@ -1,0 +1,49 @@
+﻿<script type="text/x-kendo-template" id="template-student">
+
+    <h1>Student</h1>
+    <input type="button" class="btn btn-primary" value="CreateNew" id="btnCreateStudentModelOpen"/>
+    <div id="gv-student"></div>
+
+    <div class="modal fade" id="frmStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Student</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" data-bind="value: Id"/>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Name:</label>
+                            <input type="text" class="form-control" data-bind="value: Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Email:</label>
+                            <input type="email" class="form-control" data-bind="value: Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Address:</label>
+                            <input type="text" class="form-control" data-bind="value: Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Phone:</label>
+                            <input type="tel" class="form-control" data-bind="value: Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Dob:</label>
+                            <input type="tel" class="form-control" data-bind="value: Dob" id="dtStudentDob">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bind="events:{ click: Insert},visible: IsVisibleSave">Save</button>
+                    <button type="button" class="btn btn-primary" data-bind="events:{ click: Update},visible: IsVisibleUpdate">Update</button>
+                    <button type="button" class="btn btn-primary" data-bind="events:{ click: Delete},visible: IsVisibleDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+ 
