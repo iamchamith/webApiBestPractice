@@ -8,6 +8,15 @@ namespace ONE.Controllers
 {
     public class UIController : Controller
     {
+        public ActionResult Login() {
+
+            return View();
+        }
+
+        public ActionResult Register() {
+            return View();
+        }
+
         // GET: UI
         public ActionResult Index()
         {

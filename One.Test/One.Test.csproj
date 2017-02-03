@@ -79,10 +79,12 @@
     <Compile Include="BaseTest.cs" />
     <Compile Include="Infrastructure\Enums.cs" />
     <Compile Include="Infrastructure\GenericTester.cs" />
+    <Compile Include="Infrastructure\IGeneticTesterUnitTest.cs" />
     <Compile Include="Infrastructure\ITestStuctures.cs" />
     <Compile Include="Infrastructure\TestControllerRegistory.cs" />
     <Compile Include="IntergrationTest\StudentServiceControllerIntergrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest\StudentServiceControllerUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\One.Domain\One.Domain.csproj">
@@ -102,9 +104,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitTest\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

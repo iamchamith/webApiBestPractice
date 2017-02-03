@@ -14,5 +14,10 @@ namespace One.Bo.Utility
             Test,
             Release
         }
+        public enum EUserRole {
+            Guess,
+            User,
+            Admin
+        }
     }
 }

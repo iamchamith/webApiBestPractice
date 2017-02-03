@@ -5,7 +5,7 @@ namespace One.DbAccess.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-
+    using static Bo.Utility.Enums;
     internal sealed class Configuration : DbMigrationsConfiguration<One.DbAccess.SchoolContext>
     {
         public Configuration()
@@ -23,6 +23,11 @@ namespace One.DbAccess.Migrations
                new Subject { Id = 2, Name = "DAA", Fee = 800 },
                 new Subject { Id = 3, Name = "DCCN", Fee = 400 }
            );
+
+            context.UserAuthontications.AddOrUpdate(
+                new UserAuthontication {Email="iamchamith@gmail.com",Role=EUserRole.Admin,Password="123",UserId="123" },
+                new UserAuthontication { Email = "damith@gmail.com", Role = EUserRole.User, Password = "123", UserId = "456" }
+                );
            
         }
     }

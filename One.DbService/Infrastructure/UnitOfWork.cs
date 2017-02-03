@@ -17,6 +17,7 @@ namespace One.DbService.Infrastructure
         GenericRepository<Student> StudentRepository { get; }
         GenericRepository<Subject> SubjectRepository { get; }
         GenericRepository<StudentSubject> StudentSubjectRepository { get; }
+        GenericRepository<UserAuthontication> UserAuthonticationRepository { get; }
         void Save();
         DbContext Context { get; }
 
@@ -36,6 +37,7 @@ namespace One.DbService.Infrastructure
         private GenericRepository<Student> studentRepository;
         private GenericRepository<Subject> subjectRepository;
         private GenericRepository<StudentSubject> studentSubjectRepository;
+        private GenericRepository<UserAuthontication> userAuthonticationRepository;
         public DbContext Context
         {
             get
@@ -76,6 +78,19 @@ namespace One.DbService.Infrastructure
                     this.subjectRepository = new GenericRepository<Subject>(context);
                 }
                 return subjectRepository;
+            }
+        }
+
+        public GenericRepository<UserAuthontication> UserAuthonticationRepository
+        {
+            get
+            {
+
+                if (this.userAuthonticationRepository == null)
+                {
+                    this.userAuthonticationRepository = new GenericRepository<UserAuthontication>(context);
+                }
+                return userAuthonticationRepository;
             }
         }
 

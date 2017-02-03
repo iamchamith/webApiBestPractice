@@ -14,3 +14,4 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.d
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.init.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.csproj.GenerateResource.Cache
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.createUserAuthonticationTable.resources

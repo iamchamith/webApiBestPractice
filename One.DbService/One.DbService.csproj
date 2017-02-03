@@ -76,10 +76,12 @@
     <Compile Include="Interfaces\IStudentDbService.cs" />
     <Compile Include="Interfaces\IStudentSubjectDbService.cs" />
     <Compile Include="Interfaces\ISubjectDbService.cs" />
+    <Compile Include="Interfaces\IUserAuthonticationDbService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\StudentSubjectDbService.cs" />
     <Compile Include="Services\SubjectDbService.cs" />
     <Compile Include="Services\StudentDbService.cs" />
+    <Compile Include="Services\UserAuthonticationDbService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

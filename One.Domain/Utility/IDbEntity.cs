@@ -12,5 +12,6 @@ namespace One.Domain.Utility
         DbSet<Student> Students { get; set; }
         DbSet<Subject> Subjects { get; set; }
         DbSet<StudentSubject> StudentSubjects { get; set; }
+        DbSet<UserAuthontication> UserAuthontications { get; set; }
     }
 }

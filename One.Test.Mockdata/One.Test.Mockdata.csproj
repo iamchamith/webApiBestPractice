@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201701291009442_init.Designer.cs">
       <DependentUpon>201701291009442_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702022248442_createUserAuthonticationTable.cs" />
+    <Compile Include="Migrations\201702022248442_createUserAuthonticationTable.Designer.cs">
+      <DependentUpon>201702022248442_createUserAuthonticationTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701291009442_init.resx">
       <DependentUpon>201701291009442_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702022248442_createUserAuthonticationTable.resx">
+      <DependentUpon>201702022248442_createUserAuthonticationTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

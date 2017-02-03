@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201701290904361_init.Designer.cs">
       <DependentUpon>201701290904361_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702022251184_createUserAuthonticationTable.cs" />
+    <Compile Include="Migrations\201702022251184_createUserAuthonticationTable.Designer.cs">
+      <DependentUpon>201702022251184_createUserAuthonticationTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SchoolContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +77,10 @@
       <Project>{BB80BED3-91B3-4B07-B8FC-FF7B4DF5FD91}</Project>
       <Name>One.AutomationTest</Name>
     </ProjectReference>
+    <ProjectReference Include="..\One.Bo\One.Bo.csproj">
+      <Project>{098CF66C-68A6-462D-8650-E571A0251F41}</Project>
+      <Name>One.Bo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\One.Domain\One.Domain.csproj">
       <Project>{ee193313-b499-4df8-8729-34f25b644917}</Project>
       <Name>One.Domain</Name>
@@ -81,6 +89,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701290904361_init.resx">
       <DependentUpon>201701290904361_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702022251184_createUserAuthonticationTable.resx">
+      <DependentUpon>201702022251184_createUserAuthonticationTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

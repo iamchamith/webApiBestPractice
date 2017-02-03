@@ -25,5 +25,9 @@ namespace One.Test.Mockdata
         public DbSet<Subject> Subjects
         { get; set; }
 
+        public DbSet<UserAuthontication> UserAuthontications
+        {
+            get;set;
+        }
     }
 }

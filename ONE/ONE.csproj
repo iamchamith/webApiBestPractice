@@ -83,6 +83,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -103,6 +107,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -228,10 +236,10 @@
     <Compile Include="API\StudentServiceController.cs" />
     <Compile Include="API\StudentSubjectServiceController.cs" />
     <Compile Include="API\SubjectServiceController.cs" />
+    <Compile Include="API\UserAuthonticationServiceController.cs" />
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityResolver.cs" />
@@ -266,7 +274,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Classes\MemoryCacher.cs" />
     <Compile Include="Classes\Utility.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UIController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -281,6 +288,7 @@
     <Compile Include="Models\VM\SubjectViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Providers\AuthorizationAttibute.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -356,6 +364,7 @@
     <Content Include="Views\UI\_Student.cshtml" />
     <Content Include="Views\UI\_Subject.cshtml" />
     <Content Include="Views\UI\_StudentSubject.cshtml" />
+    <Content Include="Views\UI\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -388,6 +397,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Assert\appts\app.ts" />
+    <TypeScriptCompile Include="Assert\appts\authontication.ts" />
     <TypeScriptCompile Include="Assert\appts\bean.ts" />
     <TypeScriptCompile Include="Assert\dts\bootstrap.d.ts" />
     <TypeScriptCompile Include="Assert\dts\cryptojs.d.ts" />
