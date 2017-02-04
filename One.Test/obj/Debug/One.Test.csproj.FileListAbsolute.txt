@@ -30,14 +30,12 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Optimization.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Mvc.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Security.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Security.OAuth.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Owin.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Http.Owin.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Practices.Unity.dll
-D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Razor.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.WebPages.Razor.dll
@@ -60,13 +58,11 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Optimization.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Mvc.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Security.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Http.Owin.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Practices.Unity.xml
-D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Razor.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.WebPages.Razor.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.WebPages.xml
@@ -80,3 +76,6 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\EntityFramework.SqlServer.dl
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\EntityFramework.SqlServer.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\One.Test.Mockdata.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\One.Test.Mockdata.pdb
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Cors.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Cors.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Cors.xml

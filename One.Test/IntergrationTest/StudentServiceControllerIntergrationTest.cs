@@ -8,11 +8,12 @@ using One.Test.Mockdata;
 using System.Collections.Generic;
 using One.Test;
 using One.Test.Infrastructure;
+using System.Diagnostics;
 
 namespace One.Test.IntergrationTest
 {
     [TestClass]
-    public class StudentServiceControllerIntergrationTest : BaseTest, IGenericTester<StudentViewModel,int, string>
+    public class StudentServiceControllerIntergrationTest : BaseTest, IGenericTester<StudentViewModel, int, string>
     {
         StudentServiceController c;
         public StudentServiceControllerIntergrationTest() : base()
@@ -22,8 +23,9 @@ namespace One.Test.IntergrationTest
 
         [TestMethod]
         [TestCategory("Student")]
-        public async Task IntergrationTest()
+        public async Task StudentServiceController_IntergrationTest()
         {
+            Trace.WriteLine("Start StudentServiceController_IntergrationTest");
             try
             {
                 // insert
@@ -47,6 +49,8 @@ namespace One.Test.IntergrationTest
 
                 //insert validation
                 Insert_ValidationError();
+
+                Trace.WriteLine("Success StudentServiceController_IntergrationTest");
             }
             catch (Exception ex)
             {
@@ -104,10 +108,10 @@ namespace One.Test.IntergrationTest
             var response = (OkNegotiatedContentResult<IEnumerable<StudentViewModel>>)c.Get().Result;
             //asset
             var content = (List<StudentViewModel>)response.Content;
-            Assert.IsNotNull(content, "Get");
-
+            Assert.IsNotNull(content, "Get:-content is null");
+            Assert.IsTrue(content.Count != 0, "Get:- content length is 0");
             var obj = content[content.Count - 1];
-             
+
             return obj == null ? 0 : obj.Id;
         }
 
@@ -155,7 +159,7 @@ namespace One.Test.IntergrationTest
 
         }
 
-         
+
         public bool Insert_Success(StudentViewModel item, out string key)
         {
             throw new NotImplementedException();

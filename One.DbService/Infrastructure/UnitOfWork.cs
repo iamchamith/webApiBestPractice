@@ -19,6 +19,7 @@ namespace One.DbService.Infrastructure
         GenericRepository<StudentSubject> StudentSubjectRepository { get; }
         GenericRepository<UserAuthontication> UserAuthonticationRepository { get; }
         void Save();
+        Task SaveAsync();
         DbContext Context { get; }
 
     }
@@ -98,7 +99,10 @@ namespace One.DbService.Infrastructure
         {
             context.SaveChanges();
         }
-
+        public async Task SaveAsync()
+        {
+            await context.SaveChangesAsync();
+        }
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)

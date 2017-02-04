@@ -12,7 +12,7 @@ using One.Domain;
 
 namespace One.DbService.Services
 {
-    public class StudentSubjectDbService : IStudentSubjectDbService
+    public class StudentSubjectDbService  
     {
         IUnitOfWork uof;
         public StudentSubjectDbService(IUnitOfWork _uof)

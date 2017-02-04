@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace One.DbService.Interfaces
 {
-    public  interface ISubjectDbService : IRepository<SubjectBo>
+    public  interface ISubjectDbService : IRepositoryRead<SubjectBo>,IRepositoryUpdate<SubjectBo>
     {
         IEnumerable<Subject> Get(Expression<Func<Subject, bool>> filter = null, Func<IQueryable<Subject>, IOrderedQueryable<Subject>> orderBy = null, string includeProperties = "");
     }

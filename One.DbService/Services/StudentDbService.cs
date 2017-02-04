@@ -20,32 +20,7 @@ namespace One.DbService.Services
             this.uof = _uof;
         }
 
-        public void Delete(StudentBo entityToDelete)
-        {
-            try
-            {
-                uof.StudentRepository.Delete(Mapper.Map<Student>(entityToDelete));
-                uof.Save();
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        public void Delete(object id)
-        {
-            try
-            {
-                uof.StudentRepository.Delete(id);
-                uof.Save();
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
+        
         public IEnumerable<StudentBo> Get(Expression<Func<StudentBo, bool>> filter = null, Func<IQueryable<StudentBo>, IOrderedQueryable<StudentBo>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
@@ -76,13 +51,26 @@ namespace One.DbService.Services
                 throw;
             }
         }
-
-        public void Insert(StudentBo entity)
+ 
+        public async Task InsertAsync(StudentBo entity)
         {
             try
             {
                 uof.StudentRepository.Insert(Mapper.Map<Student>(entity));
-                uof.Save();
+                await uof.SaveAsync();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+  
+        public async Task DeleteAsync(object id)
+        {
+            try
+            {
+                uof.StudentRepository.Delete(id);
+                await uof.SaveAsync();
             }
             catch
             {
@@ -90,25 +78,17 @@ namespace One.DbService.Services
             }
         }
 
-        public void Update(StudentBo entityToUpdate)
+        public async Task UpdateAsync(StudentBo entityToUpdate)
         {
             try
             {
                 uof.StudentRepository.Update(Mapper.Map<Student>(entityToUpdate));
-                uof.Save();
+                await uof.SaveAsync();
             }
             catch
             {
                 throw;
             }
         }
-
-        public void Test() {
-
-            uof.StudentRepository.Insert(new Student { Name = "Chamith", Email = "iamchamith@gmail.com" });
-
-           // uof.Context.
-        }
-
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace One.DbService.Interfaces
 {
-    public interface IStudentSubjectDbService: IRepository<StudentSubjectBo>
+    public interface IStudentSubjectDbService: IRepositoryRead<StudentSubjectBo>,IRepositoryUpdate<StudentSubjectBo>
     {  
     }
 }

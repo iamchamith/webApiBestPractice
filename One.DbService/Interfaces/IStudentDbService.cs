@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace One.DbService.Interfaces
 {
-    public interface IStudentDbService: IRepository<StudentBo>
+    public interface IStudentDbService : IRepositoryRead<StudentBo>, IRepositoryUpdateAsync<StudentBo>
     {
         IEnumerable<StudentBo> Get(Expression<Func<Student, bool>> filter = null, Func<IQueryable<Student>, IOrderedQueryable<Student>> orderBy = null, string includeProperties = "");
     }

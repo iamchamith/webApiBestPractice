@@ -39,7 +39,7 @@ namespace ONE.API
         {
             try
             {
-                service.Delete(Id);
+                await service.DeleteAsync(Id);
                 return Ok();
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace ONE.API
                 {
                     return BadRequest(validateError);
                 }
-                service.Insert(Mapper.Map<StudentBo>(item));
+                await ((StudentDbService)service).InsertAsync(Mapper.Map<StudentBo>(item));
                 return Ok();
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace ONE.API
                 {
                     return BadRequest(validateError);
                 }
-                service.Update(Mapper.Map<StudentBo>(item));
+                await service.UpdateAsync(Mapper.Map<StudentBo>(item));
                 return Ok();
             }
             catch (Exception ex)

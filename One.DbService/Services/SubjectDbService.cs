@@ -12,7 +12,7 @@ using AutoMapper;
 
 namespace One.DbService.Services
 {
-    public class SubjectDbService : ISubjectDbService
+    public class SubjectDbService  
     {
         IUnitOfWork uof;
         public SubjectDbService(IUnitOfWork _uof)
@@ -103,9 +103,6 @@ namespace One.DbService.Services
             }
         }
 
-        IEnumerable<Subject> ISubjectDbService.Get(Expression<Func<Subject, bool>> filter, Func<IQueryable<Subject>, IOrderedQueryable<Subject>> orderBy, string includeProperties)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

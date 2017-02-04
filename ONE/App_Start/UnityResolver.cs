@@ -18,8 +18,6 @@ namespace ONE.App_Start
         {
             var container = new UnityContainer();
             container.RegisterType<IStudentDbService, StudentDbService>(new HierarchicalLifetimeManager());
-            container.RegisterType<ISubjectDbService, SubjectDbService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IStudentSubjectDbService, StudentSubjectDbService>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
         }
     }
