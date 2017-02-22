@@ -23,6 +23,9 @@ namespace ONE.App_Start
 
             Mapper.CreateMap<StudentSubject, StudentSubjectBo>();
             Mapper.CreateMap<StudentSubjectViewModel, StudentSubjectBo>();
+
+            Mapper.CreateMap<UserAuthonticationBo, UserAuthontication>();
+            Mapper.CreateMap<UserAuthontication, UserAuthonticationBo>();
         }
     }
 }

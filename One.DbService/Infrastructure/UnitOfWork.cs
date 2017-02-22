@@ -25,13 +25,16 @@ namespace One.DbService.Infrastructure
     }
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        public UnitOfWork(IContext cnt,Enums.ERunType type)
+        public UnitOfWork(IContext cnt, Enums.ERunType type)
         {
-            if (type == Enums.ERunType.Debug) {
+            if (type == Enums.ERunType.Debug)
+            {
                 context = (SchoolContext)cnt;
+                context.Configuration.AutoDetectChangesEnabled=false;
             }
-            else {
-               context = (MockDbContext)cnt;
+            else
+            {
+                context = (MockDbContext)cnt;
             }
         }
         private DbContext context;

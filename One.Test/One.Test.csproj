@@ -82,11 +82,19 @@
     <Compile Include="Infrastructure\IGeneticTesterUnitTest.cs" />
     <Compile Include="Infrastructure\ITestStuctures.cs" />
     <Compile Include="Infrastructure\TestControllerRegistory.cs" />
-    <Compile Include="IntergrationTest\StudentServiceControllerIntergrationTest.cs" />
+    <Compile Include="IntergrationTest\IntergrationTest_StudentServiceController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest\StudentServiceControllerUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\One.Bo\One.Bo.csproj">
+      <Project>{098CF66C-68A6-462D-8650-E571A0251F41}</Project>
+      <Name>One.Bo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\One.DbService\One.DbService.csproj">
+      <Project>{C9BCD5A1-D684-4029-90B0-A65A6B72706F}</Project>
+      <Name>One.DbService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\One.Domain\One.Domain.csproj">
       <Project>{ee193313-b499-4df8-8729-34f25b644917}</Project>
       <Name>One.Domain</Name>
@@ -103,6 +111,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="PlayList\IntergrationTest.playlist" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

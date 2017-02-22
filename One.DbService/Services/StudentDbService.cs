@@ -52,12 +52,14 @@ namespace One.DbService.Services
             }
         }
  
-        public async Task InsertAsync(StudentBo entity)
+        public async Task<int> InsertAsync(StudentBo entity)
         {
             try
             {
-                uof.StudentRepository.Insert(Mapper.Map<Student>(entity));
+                var obj = Mapper.Map<Student>(entity);
+                uof.StudentRepository.Insert(obj);
                 await uof.SaveAsync();
+                return obj.Id;
             }
             catch
             {

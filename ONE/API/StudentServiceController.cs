@@ -21,7 +21,8 @@ using One.Domain.Utility;
 
 namespace ONE.API
 {
-    //[RoutePrefix("api/student")]
+   // [Authorize(Roles = "User")]
+    [RoutePrefix("api/v1")]
     public class StudentServiceController : BaseServiceController, IService<StudentViewModel>
     {
         IStudentDbService service;
@@ -30,11 +31,12 @@ namespace ONE.API
             this.service = new StudentDbService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
         }
         //test
-        public StudentServiceController(IContext testContext) : base(ERunType.Test)
+        public StudentServiceController(IUnitOfWork uow) : base(ERunType.Test)
         {
-            this.service = new StudentDbService(new UnitOfWork(testContext, ERunType.Test));
+            this.service = new StudentDbService(uow); 
         }
         [HttpDelete]
+        [Route("student/{Id:int}")]
         public async Task<IHttpActionResult> Delete(int Id)
         {
             try
@@ -48,6 +50,7 @@ namespace ONE.API
             }
         }
         [HttpGet]
+        [Route("student")]
         public async Task<IHttpActionResult> Get()
         {
             try
@@ -61,11 +64,12 @@ namespace ONE.API
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetSingle(int studentId)
+        [Route("student/{Id:int}")]
+        public async Task<IHttpActionResult> Get(int Id)
         {
             try
             {
-                var response = service.Get(filter: p => p.Id == studentId).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).FirstOrDefault();
+                var response = service.Get(filter: p => p.Id == Id).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).FirstOrDefault();
                 return Ok<StudentViewModel>(response);
 
             }
@@ -75,17 +79,18 @@ namespace ONE.API
             }
         }
         [HttpPost]
+        [Route("student")]
         public async Task<IHttpActionResult> Insert(StudentViewModel item)
         {
             try
             {
-                var validateError = new ModelStateDictionary();
+                var validateError = new List<string>();
                 if (!Utility.IsModelValied(item, out validateError))
                 {
-                    return BadRequest(validateError);
+                    return BadRequest(Utility.ConvertObjectToJsonString(validateError));
                 }
-                await ((StudentDbService)service).InsertAsync(Mapper.Map<StudentBo>(item));
-                return Ok();
+                int id = await ((StudentDbService)service).InsertAsync(Mapper.Map<StudentBo>(item));
+                return Ok<int>(id);
             }
             catch (Exception ex)
             {
@@ -93,14 +98,15 @@ namespace ONE.API
             }
         }
         [HttpPut]
-        public async Task<IHttpActionResult> Update(StudentViewModel item)
+        [Route("student")]
+        public async Task<IHttpActionResult>  Update(StudentViewModel item)
         {
             try
             {
-                var validateError = new ModelStateDictionary();
+                 var validateError = new List<string>();
                 if (!Utility.IsModelValied(item, out validateError))
                 {
-                    return BadRequest(validateError);
+                    return BadRequest(Utility.ConvertObjectToJsonString(validateError));
                 }
                 await service.UpdateAsync(Mapper.Map<StudentBo>(item));
                 return Ok();

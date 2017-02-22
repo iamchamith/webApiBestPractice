@@ -14,7 +14,7 @@ using System.Web.Http;
 
 namespace ONE.API
 {
-    public class SubjectServiceController : BaseServiceController, IService<SubjectViewModel>
+    public class SubjectServiceController : BaseServiceController
     {
         public Task<IHttpActionResult> Delete(int Id)
         {

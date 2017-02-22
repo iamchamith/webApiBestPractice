@@ -23,17 +23,30 @@ namespace ONE.Providers
             // I have validate the client token
             context.Validated();
         }
+        public override Task MatchEndpoint(OAuthMatchEndpointContext context)
+        {
+            if (context.OwinContext.Request.Method == "OPTIONS" && context.IsTokenEndpoint)
+            {
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Methods", new[] { "POST" });
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Headers", new[] { "accept", "authorization", "content-type" });
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+                context.OwinContext.Response.StatusCode = 200;
+                context.RequestCompleted();
 
+                return Task.FromResult<object>(null);
+            }
+
+            return base.MatchEndpoint(context);
+        }
         // user can access grand resources
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             var loginService = new UserAuthonticationDbService(new UnitOfWork(new SchoolContext(), One.Bo.Utility.Enums.ERunType.Debug));
-
-            var response = loginService.Login(context.UserName, context.Password);
-
+             
             try
             {
+                var response = loginService.Login(context.UserName, context.Password);
                 identity.AddClaims(new List<Claim>() {
                     new Claim(ClaimTypes.Role, response.Role.ToString()),
                     new Claim(ClaimTypes.Name, context.UserName)
@@ -48,17 +61,6 @@ namespace ONE.Providers
                 throw;
             }
         }
-        public override Task MatchEndpoint(OAuthMatchEndpointContext context)
-        {
-            if (context.IsTokenEndpoint && context.Request.Method == "OPTIONS")
-            {
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Headers", new[] { "authorization" });
-                context.RequestCompleted();
-                return Task.FromResult(0);
-            }
-
-            return base.MatchEndpoint(context);
-        }
+         
     }
 }

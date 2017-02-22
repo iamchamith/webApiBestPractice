@@ -16,6 +16,6 @@ namespace ONE.API
         Task<IHttpActionResult> Delete(int Id);
         Task<IHttpActionResult> Update(T item);
         Task<IHttpActionResult> Get();
-        Task<IHttpActionResult> GetSingle(int studentId);
+        Task<IHttpActionResult> Get(int studentId);
     }
 }

@@ -7,6 +7,8 @@ using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using ONE.App_Start;
 using System.Net.Http.Headers;
+using Microsoft.AspNet.WebApi.Extensions.Compression.Server;
+using System.Net.Http.Extensions.Compression.Core.Compressors;
 
 namespace ONE
 {
@@ -18,7 +20,7 @@ namespace ONE
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-
+            config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -29,9 +31,9 @@ namespace ONE
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-
+            GlobalConfiguration.Configuration.MessageHandlers.Insert(0, new ServerCompressionHandler(new GZipCompressor(), new DeflateCompressor()));
             //register unity
-           // UnitiConfig.Register(config);
+            // UnitiConfig.Register(config);
         }
     }
 }

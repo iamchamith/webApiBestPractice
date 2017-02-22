@@ -1,3 +1,4 @@
+/// <reference path="util.ts" />
 var One;
 (function (One) {
     var Authontication;
@@ -6,11 +7,14 @@ var One;
             var login = function (e) {
                 $.ajax({
                     url: '/token',
-                    data: JSON.stringify(e),
+                    data: e,
                     method: 'post',
-                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    contentType: 'application/x-www-form-urlencoded',
                 }).done(function (e) {
+                    sessionStorage.setItem('t', e.access_token);
                     console.log(e);
+                }).fail(function (e) {
+                    Errors.handleErrors(e);
                 });
             };
             return {
@@ -19,7 +23,7 @@ var One;
                         var d = {
                             username: $.trim($('#txtEmail').val()),
                             password: $('#txtPassword').val(),
-                            grant_type: $('#txtPassword').val()
+                            grant_type: 'password'
                         };
                         login(d);
                     });

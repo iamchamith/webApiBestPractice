@@ -112,3 +112,13 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\One.Test.Mockdata.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\Microsoft.Owin.Cors.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Web.Cors.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\Microsoft.Owin.Cors.xml
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Web.Http.Cors.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Web.Http.Cors.xml
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\Microsoft.AspNet.WebApi.Extensions.Compression.Server.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Net.Http.Extensions.Compression.Client.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Net.Http.Extensions.Compression.Core.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Net.Http.Extensions.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Net.Http.Primitives.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Net.Http.Extensions.xml
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\bin\System.Net.Http.Primitives.xml
+D:\INTERVIEW 2017\PRACTICE\1\ONE\ONE\obj\Debug\ONE.csproj.App.config

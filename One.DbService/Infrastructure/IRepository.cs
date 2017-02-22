@@ -24,7 +24,7 @@ namespace One.DbService.Infrastructure
 
     public interface IRepositoryUpdateAsync<T> where T : class {
 
-        Task InsertAsync(T entity);
+        Task<int> InsertAsync(T entity);
         Task DeleteAsync(object id);
         Task UpdateAsync(T entityToUpdate);
     }

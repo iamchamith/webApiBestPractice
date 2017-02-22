@@ -61,7 +61,10 @@ namespace One.DbService.Infrastructure
         public virtual void Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
-            Delete(entityToDelete);
+            if (entityToDelete!= null)
+            {
+                Delete(entityToDelete);
+            }
         }
 
         public virtual void Delete(TEntity entityToDelete)

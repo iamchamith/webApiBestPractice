@@ -12,10 +12,12 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\AutoMapper.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\AutoMapper.xml
-D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\One.AutomationTest.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\One.AutomationTest.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.init.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.csproj.GenerateResource.Cache
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\One.Bo.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\One.Bo.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.createUserAuthonticationTable.resources
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\One.AutomationTest.exe
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\WebDriver.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\WebDriver.xml

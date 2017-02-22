@@ -50,7 +50,6 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Newtonsoft.Json.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Net.Http.Formatting.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Http.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Http.WebHost.xml
-D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\One.DbAccess.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\EntityFramework.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\AutoMapper.xml
@@ -79,3 +78,5 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\One.Test.Mockdata.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Cors.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Cors.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\Microsoft.Owin.Cors.xml
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Http.Cors.dll
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test\bin\Debug\System.Web.Http.Cors.xml
