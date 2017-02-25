@@ -5,7 +5,7 @@ var One;
     var student = (function () {
         //globle variables
         var dsStudents = new kendo.data.DataSource();
-        var url = "/api/v1/student/";
+        var url = "/api/v1/students";
         var $studentViewModel = new kendo.data.ObservableObject();
         //api calls
         var apiCalls = {
@@ -19,7 +19,7 @@ var One;
             },
             update_: function (e) {
                 return $.ajax({
-                    url: url,
+                    url: url + '/' + e.Id,
                     contentType: "application/json;charset=utf-8",
                     method: 'put',
                     data: JSON.stringify(e)
@@ -27,10 +27,10 @@ var One;
             },
             delete_: function (e) {
                 return $.ajax({
-                    url: url,
+                    url: url + '/' + e.Id,
                     contentType: "application/json;charset=utf-8",
-                    method: 'delete',
-                    data: { Id: e.Id }
+                    method: 'post',
+                    data: null
                 });
             },
             get_: function (e) {

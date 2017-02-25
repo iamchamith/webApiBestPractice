@@ -5,7 +5,7 @@ module One {
     var student = (function () {
         //globle variables
         let dsStudents = new kendo.data.DataSource();
-        const url = "/api/v1/student/";
+        const url = "/api/v1/students";
         var $studentViewModel = new kendo.data.ObservableObject();
         //api calls
         var apiCalls = {
@@ -19,7 +19,7 @@ module One {
             },
             update_(e: MVVM.Student): JQueryXHR {
                 return $.ajax({
-                    url: url,
+                    url: url + '/' + e.Id,
                     contentType: "application/json;charset=utf-8",
                     method: 'put',
                     data: JSON.stringify(e)
@@ -27,10 +27,10 @@ module One {
             },
             delete_(e: any): JQueryXHR {
                 return $.ajax({
-                    url: url,
+                    url: url + '/' + e.Id,
                     contentType: "application/json;charset=utf-8",
-                    method: 'delete',
-                    data: { Id: e.Id }
+                    method: 'post',
+                    data: null
                 });
             },
             get_(e?): JQueryXHR {
