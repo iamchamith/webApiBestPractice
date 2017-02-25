@@ -1,10 +1,6 @@
-﻿/// <reference path="util.ts" />
-
+﻿ 
 module One.Authontication {
-
-
     var auth = (() => {
-
         var login = (e) => {
             $.ajax({
                 url: '/token',
@@ -12,12 +8,11 @@ module One.Authontication {
                 method: 'post',
                 contentType: 'application/x-www-form-urlencoded',
             }).done((e) => {
-                
                 sessionStorage.setItem('t', e.access_token);
                 console.log(e);
+                alert('login is success');
                 }).fail((e) => {
-                   
-                    Errors.handleErrors(e);
+                    alert('invalied username or password');
                 });
         }
 

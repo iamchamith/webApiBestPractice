@@ -23,7 +23,7 @@ namespace One.DbService.Infrastructure
         public virtual IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "")
+            string includeProperties = "", int skip = 0, int take = 0)
         {
             IQueryable<TEntity> query = dbSet;
 
@@ -37,20 +37,34 @@ namespace One.DbService.Infrastructure
             {
                 query = query.Include(includeProperty);
             }
-
+            IEnumerable<TEntity> result;
             if (orderBy != null)
             {
-                return orderBy(query).ToList();
+                result = orderBy(query).ToList();
             }
             else
             {
-                return query.ToList();
+                result = query.ToList();
+            }
+
+            if (skip == 0 && take == 0)
+            {
+                return result;
+            }
+            else
+            {
+                return result.Skip(skip).Take(take);
             }
         }
 
         public virtual TEntity GetByID(object id)
         {
             return dbSet.Find(id);
+        }
+
+        public virtual int GetRecodeCount()
+        {
+            return dbSet.Count();
         }
 
         public virtual void Insert(TEntity entity)
@@ -61,7 +75,7 @@ namespace One.DbService.Infrastructure
         public virtual void Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
-            if (entityToDelete!= null)
+            if (entityToDelete != null)
             {
                 Delete(entityToDelete);
             }

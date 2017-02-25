@@ -23,21 +23,21 @@ namespace ONE.Providers
             // I have validate the client token
             context.Validated();
         }
-        public override Task MatchEndpoint(OAuthMatchEndpointContext context)
-        {
-            if (context.OwinContext.Request.Method == "OPTIONS" && context.IsTokenEndpoint)
-            {
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Methods", new[] { "POST" });
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Headers", new[] { "accept", "authorization", "content-type" });
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-                context.OwinContext.Response.StatusCode = 200;
-                context.RequestCompleted();
+        //public override Task MatchEndpoint(OAuthMatchEndpointContext context)
+        //{
+        //     if (context.OwinContext.Request.Method == "OPTIONS" && context.IsTokenEndpoint)
+        //    {
+        //        context.OwinContext.Response.Headers.Add("Access-Control-Allow-Methods", new[] { "POST" });
+        //        context.OwinContext.Response.Headers.Add("Access-Control-Allow-Headers", new[] { "accept", "authorization", "content-type" });
+        //        context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+        //        context.OwinContext.Response.StatusCode = 200;
+        //        context.RequestCompleted();
 
-                return Task.FromResult<object>(null);
-            }
+        //        return Task.FromResult<object>(null);
+        //    }
 
-            return base.MatchEndpoint(context);
-        }
+        //    return base.MatchEndpoint(context);
+        //}
         // user can access grand resources
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {

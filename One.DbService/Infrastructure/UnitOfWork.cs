@@ -15,9 +15,9 @@ namespace One.DbService.Infrastructure
     public interface IUnitOfWork
     {
         GenericRepository<Student> StudentRepository { get; }
-        GenericRepository<Subject> SubjectRepository { get; }
-        GenericRepository<StudentSubject> StudentSubjectRepository { get; }
         GenericRepository<UserAuthontication> UserAuthonticationRepository { get; }
+        GenericRepository<School> SchoolRepository { get; }
+        GenericRepository<Streem> StreemRepository { get; }
         void Save();
         Task SaveAsync();
         DbContext Context { get; }
@@ -39,9 +39,9 @@ namespace One.DbService.Infrastructure
         }
         private DbContext context;
         private GenericRepository<Student> studentRepository;
-        private GenericRepository<Subject> subjectRepository;
-        private GenericRepository<StudentSubject> studentSubjectRepository;
         private GenericRepository<UserAuthontication> userAuthonticationRepository;
+        private GenericRepository<Streem> streemRepository;
+        private GenericRepository<School> schoolRepository;
         public DbContext Context
         {
             get
@@ -61,30 +61,6 @@ namespace One.DbService.Infrastructure
                 return studentRepository;
             }
         }
-        public GenericRepository<StudentSubject> StudentSubjectRepository
-        {
-            get
-            {
-                if (this.studentSubjectRepository == null)
-                {
-                    this.studentSubjectRepository = new GenericRepository<StudentSubject>(context);
-                }
-                return studentSubjectRepository;
-            }
-        }
-        public GenericRepository<Subject> SubjectRepository
-        {
-            get
-            {
-
-                if (this.subjectRepository == null)
-                {
-                    this.subjectRepository = new GenericRepository<Subject>(context);
-                }
-                return subjectRepository;
-            }
-        }
-
         public GenericRepository<UserAuthontication> UserAuthonticationRepository
         {
             get
@@ -95,6 +71,30 @@ namespace One.DbService.Infrastructure
                     this.userAuthonticationRepository = new GenericRepository<UserAuthontication>(context);
                 }
                 return userAuthonticationRepository;
+            }
+        }
+
+        public GenericRepository<School> SchoolRepository
+        {
+            get
+            {
+                if (this.schoolRepository == null)
+                {
+                    this.schoolRepository = new GenericRepository<School>(context);
+                }
+                return schoolRepository;
+            }
+        }
+
+        public GenericRepository<Streem> StreemRepository
+        {
+            get
+            {
+                if (this.streemRepository == null)
+                {
+                    this.streemRepository = new GenericRepository<Streem>(context);
+                }
+                return streemRepository;
             }
         }
 

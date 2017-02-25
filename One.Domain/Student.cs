@@ -31,5 +31,12 @@ namespace One.Domain
         [StringLength(10)]
         [Column(TypeName = "varchar")]
         public string Phone { get; set; }
+
+        public int SchoolId { get; set; }
+        [ForeignKey("SchoolId")]
+        public virtual School School { get; set; }
+        public int StreemId { get; set; }
+        [ForeignKey("StreemId")]
+        public virtual Streem Streem { get; set; }
     }
 }

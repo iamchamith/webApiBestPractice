@@ -23,5 +23,7 @@ namespace ONE.Models.VM
         [Required(ErrorMessage = "Student Phone Requred")]
         [StringLength(10, ErrorMessage = "Phone Must lessthan 10 char")]
         public string Phone { get; set; }
+        public int SchoolId { get; set; }
+        public int StreemId { get; set; }
     }
 }

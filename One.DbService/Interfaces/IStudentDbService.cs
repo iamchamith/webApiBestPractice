@@ -12,6 +12,6 @@ namespace One.DbService.Interfaces
 {
     public interface IStudentDbService : IRepositoryRead<StudentBo>, IRepositoryUpdateAsync<StudentBo>
     {
-        IEnumerable<StudentBo> Get(Expression<Func<Student, bool>> filter = null, Func<IQueryable<Student>, IOrderedQueryable<Student>> orderBy = null, string includeProperties = "");
+        IEnumerable<StudentBo> Get(out int recodeCount, int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null);
     }
 }

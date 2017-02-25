@@ -21,11 +21,13 @@ using One.Domain.Utility;
 
 namespace ONE.API
 {
-    // [Authorize(Roles = "User")]
+   //[Authorize(Roles = "User")]
     [RoutePrefix("api/v1")]
     public class StudentServiceController : BaseServiceController, IService<StudentViewModel>
     {
         IStudentDbService service;
+        IStreemDbService streemDbService;
+        ISchoolDbService schoolDbService;
         public StudentServiceController() : base()
         {
             this.service = new StudentDbService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
@@ -35,16 +37,37 @@ namespace ONE.API
         {
             this.service = new StudentDbService(uow);
         }
-
         [HttpGet]
-        [Route("students")]
-        public async Task<IHttpActionResult> Get(int page = 1, int itemsPerPage = 30, string sortBy = "FirstName",
-                     bool reverse = false, string search = null)
+        [Route("students/lookup")]
+        public async Task<IHttpActionResult> Lookup()
         {
             try
             {
-                service.Get(filter: p => p.Address == "");
-                return Ok<IEnumerable<StudentViewModel>>(service.Get().Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).ToList());
+                var uow = new UnitOfWork(new SchoolContext(), ERunType.Debug);
+                streemDbService = new StreemDbService(uow);
+                schoolDbService = new SchoolDbService(uow);
+                int recodeCount = 0;
+                return Ok<object>(new
+                {
+                    steem = streemDbService.Get(out recodeCount, 0, 0, "name", true, "").Select(x => AutoMapper.Mapper.Map<StreemViewModel>(x)),
+                    school = schoolDbService.Get(out recodeCount, 0, 0, "name", true, "").Select(x => AutoMapper.Mapper.Map<SchoolViewModel>(x))
+                });
+            }
+            catch (Exception ex)
+            {
+                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+            }
+        }
+
+        [HttpGet]
+        [Route("students")]
+        public async Task<IHttpActionResult> Get(int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null)
+        {
+            try
+            {
+                int recodeCount = 0;
+                var res = service.Get(out recodeCount, skip, take, sortBy, isASC, search).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).ToList();
+                return Ok<object>(new { result = res, recodeCount = recodeCount });
             }
             catch (Exception ex)
             {
@@ -58,7 +81,7 @@ namespace ONE.API
         {
             try
             {
-                var response = service.Get(filter: p => p.Id == id).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).FirstOrDefault();
+                var response = Mapper.Map<StudentViewModel>(service.GetByID(id));
                 return Ok<StudentViewModel>(response);
 
             }
@@ -68,16 +91,12 @@ namespace ONE.API
             }
         }
         [HttpPost]
+        [ValidateModel]
         [Route("students")]
         public async Task<IHttpActionResult> Insert(StudentViewModel item)
         {
             try
             {
-                var validateError = new List<string>();
-                if (!Utility.IsModelValied(item, out validateError))
-                {
-                    return BadRequest(Utility.ConvertObjectToJsonString(validateError));
-                }
                 int id = await ((StudentDbService)service).InsertAsync(Mapper.Map<StudentBo>(item));
                 return Ok<int>(id);
             }
@@ -87,17 +106,13 @@ namespace ONE.API
             }
         }
         [HttpPut]
+        [ValidateModel]
         [Route("students/{id:int}")]
         public async Task<IHttpActionResult> Update(StudentViewModel item, int id)
         {
             try
             {
                 item.Id = id;
-                var validateError = new List<string>();
-                if (!Utility.IsModelValied(item, out validateError))
-                {
-                    return BadRequest(Utility.ConvertObjectToJsonString(validateError));
-                }
                 await service.UpdateAsync(Mapper.Map<StudentBo>(item));
                 return Ok();
             }

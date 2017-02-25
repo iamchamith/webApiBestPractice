@@ -18,11 +18,15 @@ namespace ONE.App_Start
             Mapper.CreateMap<StudentViewModel, StudentBo>();
             Mapper.CreateMap<StudentBo, Student>();
 
-            Mapper.CreateMap<Subject, SubjectBo>();
-            Mapper.CreateMap<SubjectViewModel, SubjectBo>();
+            Mapper.CreateMap<School, SchoolBo>();
+            Mapper.CreateMap<SchoolBo, School>();
+            Mapper.CreateMap<SchoolBo, SchoolViewModel>();
+            Mapper.CreateMap<SchoolViewModel, SchoolBo>();
 
-            Mapper.CreateMap<StudentSubject, StudentSubjectBo>();
-            Mapper.CreateMap<StudentSubjectViewModel, StudentSubjectBo>();
+            Mapper.CreateMap<Streem, StreemBo>();
+            Mapper.CreateMap<StreemBo, Streem>();
+            Mapper.CreateMap<StreemBo, StreemViewModel>();
+            Mapper.CreateMap<StreemViewModel, StreemBo>();
 
             Mapper.CreateMap<UserAuthonticationBo, UserAuthontication>();
             Mapper.CreateMap<UserAuthontication, UserAuthonticationBo>();

@@ -10,8 +10,8 @@ namespace One.Domain.Utility
     public interface IContext
     {
         DbSet<Student> Students { get; set; }
-        DbSet<Subject> Subjects { get; set; }
-        DbSet<StudentSubject> StudentSubjects { get; set; }
+        DbSet<School> Schools { get; set; }
+        DbSet<Streem> Streems { get; set; }
         DbSet<UserAuthontication> UserAuthontications { get; set; }
     }
 }

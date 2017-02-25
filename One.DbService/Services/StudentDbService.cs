@@ -9,6 +9,7 @@ using System.Linq.Expressions;
 using One.DbService.Infrastructure;
 using AutoMapper;
 using One.Domain;
+using One.Bo.Utility;
 
 namespace One.DbService.Services
 {
@@ -20,19 +21,44 @@ namespace One.DbService.Services
             this.uof = _uof;
         }
 
-        
+
         public IEnumerable<StudentBo> Get(Expression<Func<StudentBo, bool>> filter = null, Func<IQueryable<StudentBo>, IOrderedQueryable<StudentBo>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<StudentBo> Get(Expression<Func<Student, bool>> filter = null, Func<IQueryable<Student>, IOrderedQueryable<Student>> orderBy = null, string includeProperties = "")
+        public IEnumerable<StudentBo> Get(out int recodeCount, int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null)
         {
             try
             {
-                var res = uof.StudentRepository.Get(filter, orderBy, includeProperties);
-                return res
-                    .Select(x => Mapper.Map<StudentBo>(x)).ToList();
+                Expression<Func<Student, bool>> filter = null;
+                Func<IQueryable<Student>, IOrderedQueryable<Student>> orderBy = null;
+                if (!string.IsNullOrWhiteSpace(search))
+                {
+                    var s = search.ToLower().Trim();
+                    filter = (e) => e.Address.StartsWith(s) || e.Name.StartsWith(s) || e.School.Name.StartsWith(s);
+                }
+                if (!string.IsNullOrWhiteSpace(sortBy))
+                {
+                    if (sortBy == "id")
+                    {
+                        orderBy = (e) => (isASC) ? e.OrderBy(p => p.Id) : e.OrderByDescending(p => p.Id);
+                    }
+                    else if (sortBy == "name")
+                    {
+                        orderBy = (e) => (isASC) ? e.OrderBy(p => p.Name) : e.OrderByDescending(p => p.Name);
+                    }
+                    else
+                    {
+                        throw new ArgumentException("invalied sorting type");
+                    }
+                }
+                // query
+                var res = uof.StudentRepository.Get(filter: filter, orderBy: orderBy, skip: skip, take: take);
+                // add to the cache
+                var result = res.Select(x => Mapper.Map<StudentBo>(x)).ToList();
+                recodeCount = uof.StudentRepository.GetRecodeCount();
+                return result;
             }
             catch (Exception ex)
             {
@@ -44,14 +70,14 @@ namespace One.DbService.Services
         {
             try
             {
-                return Mapper.Map<StudentBo>(uof.SubjectRepository.GetByID(id));
+                return Mapper.Map<StudentBo>(uof.StudentRepository.GetByID(id));
             }
             catch
             {
                 throw;
             }
         }
- 
+
         public async Task<int> InsertAsync(StudentBo entity)
         {
             try
@@ -66,7 +92,7 @@ namespace One.DbService.Services
                 throw;
             }
         }
-  
+
         public async Task DeleteAsync(object id)
         {
             try

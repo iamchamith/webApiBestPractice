@@ -1,14 +1,24 @@
-/// <reference path="bean.ts" />
-/// <reference path="enums.ts" />
 var One;
 (function (One) {
     var student = (function () {
         //globle variables
-        var dsStudents = new kendo.data.DataSource();
+        var pageSize = 0;
+        var dsStudents = new kendo.data.DataSource({
+            pageSize: pageSize,
+        });
         var url = "/api/v1/students";
         var $studentViewModel = new kendo.data.ObservableObject();
+        var $lookupViewModel = new kendo.data.ObservableObject();
         //api calls
         var apiCalls = {
+            lookup_: function () {
+                return $.ajax({
+                    url: url + '/lookup',
+                    contentType: "application/json;charset=utf-8",
+                    method: 'get',
+                    data: null
+                });
+            },
             insert_: function (e) {
                 return $.ajax({
                     url: url,
@@ -40,17 +50,17 @@ var One;
                     contentType: "application/json;charset=utf-8",
                     data: e
                 });
+            },
+            getSingle_: function (e) {
+                return $.ajax({
+                    url: url + "/" + e,
+                    method: 'get',
+                    contentType: "application/json;charset=utf-8",
+                    data: null
+                });
             }
         };
         // mvvm
-        function getSingle_(e) {
-            return $.ajax({
-                url: url + "/" + e,
-                method: 'get',
-                contentType: "application/json;charset=utf-8",
-                data: null
-            });
-        }
         function setMvvm(e) {
             $studentViewModel = kendo.observable({
                 Id: e.Id,
@@ -62,6 +72,8 @@ var One;
                 IsVisibleSave: e.IsVisibleSave,
                 IsVisibleUpdate: e.IsVisibleUpdate,
                 IsVisibleDelete: e.IsVisibleDelete,
+                StreemId: e.StreemId.toString(),
+                SchoolId: e.SchoolId.toString(),
                 Insert: function (p) {
                     var validator = $("#_frmStudent").kendoValidator().data("kendoValidator");
                     if (!validator.validate()) {
@@ -140,8 +152,9 @@ var One;
         //datasource
         function dsRefresh(e, d) {
             if (e == Enums.Crud.read) {
-                apiCalls.get_().done(function (e) {
-                    dsStudents.data(e);
+                apiCalls.get_(d).done(function (e) {
+                    dsStudents.data(e.result);
+                    $('#recodeCount').val(d.recodeCount);
                     $('#gv-student').data("kendoGrid").setDataSource(dsStudents);
                 }).fail(function (e) {
                     Errors.handleErrors(e);
@@ -207,45 +220,73 @@ var One;
                 }
             });
         }
+        //get
+        function read(e) {
+            dsRefresh(Enums.Crud.read, e);
+        }
+        //lookup datasource
+        function lookup() {
+            apiCalls.lookup_().done(function (e) {
+                $lookupViewModel = kendo.observable({
+                    streemDs: e.steem,
+                    schoolDs: e.school
+                });
+                kendo.bind($("#frmStudent"), $lookupViewModel);
+            }).fail(function (e) {
+                Errors.handleErrors(e);
+            });
+        }
+        function initControllers() {
+            $("#main-placeHolder").html($("#template-student").html());
+            $('#btnCreateStudentModelOpen').off('click').bind('click', null, function () {
+                var e = new MVVM.Student();
+                e.Id = 0;
+                e.Dob = Util.addDays(new Date(), -5);
+                e.IsVisibleSave = true;
+                e.IsVisibleUpdate = false;
+                e.IsVisibleDelete = false;
+                e.SchoolId = 1;
+                e.StreemId = 1;
+                ModelOpen(e);
+            });
+            $('#gv-student').kendoGrid({
+                columns: [
+                    { field: "Id", hidden: true },
+                    { field: "Name" },
+                    { field: "Email" },
+                    {
+                        command: [{
+                                name: "details",
+                                click: function (e) {
+                                    e.preventDefault();
+                                    var data = this.dataItem($(e.target).closest("tr"));
+                                    apiCalls.getSingle_(data.Id).done(function (e) {
+                                        e.IsVisibleSave = false;
+                                        e.IsVisibleUpdate = true;
+                                        e.IsVisibleDelete = true;
+                                        ModelOpen(e);
+                                    }).fail(function (e) {
+                                        Errors.handleErrors(e);
+                                    });
+                                }
+                            }]
+                    }
+                ],
+                sortable: true,
+                pageable: true,
+                filterable: true
+            });
+            read(new utilBean.GetQuery(0, pageSize, 'id', false, ''));
+            $('#btnSearch').off('click').on('click', function () {
+                read(new utilBean.GetQuery(0, pageSize, 'id', false, $.trim($('#txtSearch').val())));
+            });
+            validation();
+        }
         //public method
         return {
             init: function () {
-                $("#main-placeHolder").html($("#template-student").html());
-                $('#btnCreateStudentModelOpen').off().bind('click', null, function () {
-                    var e = new MVVM.Student();
-                    e.Id = 0;
-                    e.IsVisibleSave = true;
-                    e.IsVisibleUpdate = false;
-                    e.IsVisibleDelete = false;
-                    ModelOpen(e);
-                });
-                $('#gv-student').kendoGrid({
-                    columns: [
-                        { field: "Id", hidden: true },
-                        { field: "Name" },
-                        { field: "Email" },
-                        {
-                            command: [{
-                                    name: "details",
-                                    click: function (e) {
-                                        e.preventDefault();
-                                        var data = this.dataItem($(e.target).closest("tr"));
-                                        getSingle_(data.Id).done(function (e) {
-                                            e.IsVisibleSave = false;
-                                            e.IsVisibleUpdate = true;
-                                            e.IsVisibleDelete = true;
-                                            ModelOpen(e);
-                                        }).fail(function (e) {
-                                            Errors.handleErrors(e);
-                                        });
-                                    }
-                                }]
-                        }
-                    ],
-                });
-                $('#dtStudentDob').kendoDatePicker();
-                dsRefresh(Enums.Crud.read);
-                validation();
+                initControllers();
+                lookup();
             },
             studentDs: function () {
                 return dsStudents.view();

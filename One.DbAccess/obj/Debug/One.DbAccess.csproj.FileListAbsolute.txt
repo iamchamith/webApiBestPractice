@@ -21,3 +21,4 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\One.AutomationTest.exe
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\WebDriver.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\bin\Debug\WebDriver.xml
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.refreshTables.resources

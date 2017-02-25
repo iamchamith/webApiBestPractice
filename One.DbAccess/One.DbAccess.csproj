@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201702022251184_createUserAuthonticationTable.Designer.cs">
       <DependentUpon>201702022251184_createUserAuthonticationTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702250526090_refreshTables.cs" />
+    <Compile Include="Migrations\201702250526090_refreshTables.Designer.cs">
+      <DependentUpon>201702250526090_refreshTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SchoolContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702022251184_createUserAuthonticationTable.resx">
       <DependentUpon>201702022251184_createUserAuthonticationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250526090_refreshTables.resx">
+      <DependentUpon>201702250526090_refreshTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

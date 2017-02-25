@@ -5,11 +5,10 @@ var Errors;
             sweetAlert("Oops...", "Something went wrong!", "error");
         }
         else if (e.status == 400) {
-            console.log(e);
-            var j = JSON.parse(e.responseJSON.Message);
+            console.log(e.responseJSON);
             var err = '<ul class="error-msg">';
-            $.each(j, function (i, d) {
-                err += "<li class='error-msg-li'>" + d + "<li>";
+            $.each(e.responseJSON.ModelState, function (i, d) {
+                err += "<li class='error-msg-li'>" + d[0] + "<li>";
             });
             err += '</ul><br/></br/>';
             swal({
@@ -24,4 +23,3 @@ var Errors;
     }
     Errors.handleErrors = handleErrors;
 })(Errors || (Errors = {}));
-//# sourceMappingURL=errors.js.map

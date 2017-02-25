@@ -1,6 +1,6 @@
 ﻿module MVVM {
     export class Student {
-        Id: Number;
+        Id: number;
         Name: string;
         Email: string;
         Dob: Date;
@@ -9,18 +9,7 @@
         IsVisibleSave: boolean;
         IsVisibleUpdate: boolean;
         IsVisibleDelete: boolean;
+        StreemId: number;
+        SchoolId: number;
     }
-     
-    export class Subject {
-        Id: number;
-        Name: number;
-        Fee: number;
-    }
-    export class StudentSubject {
-        StudentId: number;
-        SubjectId: number;
-        RegDate: number;
-    }
- 
-
 }

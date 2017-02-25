@@ -1,4 +1,3 @@
-/// <reference path="util.ts" />
 var One;
 (function (One) {
     var Authontication;
@@ -13,8 +12,9 @@ var One;
                 }).done(function (e) {
                     sessionStorage.setItem('t', e.access_token);
                     console.log(e);
+                    alert('login is success');
                 }).fail(function (e) {
-                    Errors.handleErrors(e);
+                    alert('invalied username or password');
                 });
             };
             return {

@@ -1,9 +1,20 @@
 ﻿<script type="text/x-kendo-template" id="template-student">
 
     <h1>Student</h1>
-    <input type="button" class="btn btn-primary" value="CreateNew" id="btnCreateStudentModelOpen" />
+    <div class="row">
+        <div class="col col-md-6 col-lg-6">
+            <input type="button" class="btn btn-primary" value="Create New" id="btnCreateStudentModelOpen" />
+        </div>
+        <div class="col col-md-3 col-lg-3">
+            <input type="text" id="txtSearch" class="form-control pull-right" style="width:100%" placeholder="search" />
+        </div>
+        <div class="col col-md-3 col-lg-3">
+            <input type="button" class="btn btn-primary pull-left" value="Search" id="btnSearch" />
+        </div>
+    </div>
+    <br />
     <div id="gv-student"></div>
-
+    <input type="hidden" name="recodeCount" id="recodeCount" value="0" />
     <div class="modal fade" id="frmStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -32,7 +43,33 @@
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Dob:</label><br />
-                            <input type="tel" class="form-control" data-bind="value: Dob" id="dtStudentDob">
+                            <input data-bind="value: Dob" data-role="datepicker" id="dtStudentDob">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="control-label">Stream:</label><br />
+                                    <input data-role="combobox"
+                                           data-placeholder="Select Stream"
+                                           data-value-primitive="true"
+                                           data-text-field="Name"
+                                           data-value-field="Id"
+                                           data-bind="value: StreemId,
+                                   source: streemDs" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="control-label">School:</label><br />
+                                    <input data-role="combobox"
+                                           data-placeholder="Select School"
+                                           data-value-primitive="true"
+                                           data-text-field="Name"
+                                           data-value-field="Id"
+                                           data-bind="value: SchoolId,
+                                   source: schoolDs" />
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

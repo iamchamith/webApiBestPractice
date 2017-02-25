@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="School.cs" />
+    <Compile Include="Streem.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentSubject.cs" />
-    <Compile Include="Subject.cs" />
     <Compile Include="UserAuthontication.cs" />
     <Compile Include="Utility\IDbEntity.cs" />
   </ItemGroup>

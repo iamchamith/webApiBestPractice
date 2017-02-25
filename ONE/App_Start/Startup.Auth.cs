@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using ONE.Providers;
 using ONE.Models;
+using System.Web.Http;
 
 namespace ONE
 {
@@ -38,6 +39,9 @@ namespace ONE
             //user this identity
             app.UseOAuthAuthorizationServer(option);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+
+            HttpConfiguration config = new HttpConfiguration();
+            WebApiConfig.Register(config);
         }
     }
 }

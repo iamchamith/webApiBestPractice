@@ -8,4 +8,3 @@ var Enums;
     })(Enums.Crud || (Enums.Crud = {}));
     var Crud = Enums.Crud;
 })(Enums || (Enums = {}));
-//# sourceMappingURL=enums.js.map

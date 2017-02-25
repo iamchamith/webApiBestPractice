@@ -26,5 +26,10 @@ var Util;
         return null;
     }
     Util.readCookie = readCookie;
+    function addDays(date, days) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result;
+    }
+    Util.addDays = addDays;
 })(Util || (Util = {}));
-//# sourceMappingURL=util.js.map
