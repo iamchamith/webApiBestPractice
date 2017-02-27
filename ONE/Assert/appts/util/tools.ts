@@ -1,4 +1,4 @@
-﻿module Util {
+﻿module Util.Tools {
 
     export function createCookie(name, value, days) {
         var expires;
@@ -27,5 +27,15 @@
         var result = new Date(date);
         result.setDate(result.getDate() + days);
         return result;
+    }
+    export function encodeImageFileAsURL(file: any, callback): any {
+
+        var filesSelected = file;
+        var fileReader = new FileReader();
+        var fileToLoad = filesSelected[0];
+        fileReader.onload = function (fileLoadedEvent: any) {
+            callback({ f: fileLoadedEvent.target.result, ex: file[0].name.split('.').pop() });
+        }
+        fileReader.readAsDataURL(fileToLoad);
     }
 }

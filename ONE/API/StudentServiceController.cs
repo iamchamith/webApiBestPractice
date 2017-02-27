@@ -1,27 +1,20 @@
-﻿using ONE.API;
-using ONE.Models.VM;
+﻿using ONE.Models.VM;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web;
 using One.DbService.Services;
 using One.DbService.Interfaces;
 using AutoMapper;
 using One.Bo;
 using One.DbService.Infrastructure;
 using System.Threading.Tasks;
-using System.Web.Http.ModelBinding;
 using ONE.Classes;
 using static One.Bo.Utility.Enums;
 using One.DbAccess;
-using One.Domain.Utility;
 
 namespace ONE.API
 {
-   //[Authorize(Roles = "User")]
+    //[Authorize(Roles = "User")]
     [RoutePrefix("api/v1")]
     public class StudentServiceController : BaseServiceController, IService<StudentViewModel>
     {
@@ -33,7 +26,7 @@ namespace ONE.API
             this.service = new StudentDbService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
         }
         //test
-        public StudentServiceController(IUnitOfWork uow) : base(ERunType.Test)
+        public StudentServiceController(IUnitOfWork uow) : base(uow, ERunType.Test)
         {
             this.service = new StudentDbService(uow);
         }
@@ -55,10 +48,9 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
-                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+                return await LogErrors(ex);
             }
         }
-
         [HttpGet]
         [Route("students")]
         public async Task<IHttpActionResult> Get(int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null)
@@ -66,15 +58,14 @@ namespace ONE.API
             try
             {
                 int recodeCount = 0;
-                var res = service.Get(out recodeCount, skip, take, sortBy, isASC, search).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).ToList();
+                var res =  service.Get(out recodeCount, skip, take, sortBy, isASC, search).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).ToList();
                 return Ok<object>(new { result = res, recodeCount = recodeCount });
             }
             catch (Exception ex)
             {
-                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+                return await LogErrors(ex);
             }
         }
-
         [HttpGet]
         [Route("students/{id:int}")]
         public async Task<IHttpActionResult> Get(int id)
@@ -87,7 +78,7 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
-                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+                return await LogErrors(ex);
             }
         }
         [HttpPost]
@@ -102,7 +93,7 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
-                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+                return await LogErrors(ex);
             }
         }
         [HttpPut]
@@ -118,7 +109,7 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
-                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+                return await LogErrors(ex);
             }
         }
         [HttpPost]
@@ -132,7 +123,7 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
-                return Content<Exception>(HttpStatusCode.InternalServerError, ex);
+                return await LogErrors(ex);
             }
         }
     }

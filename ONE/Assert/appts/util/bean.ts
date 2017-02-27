@@ -1,4 +1,4 @@
-﻿module utilBean {
+﻿module Util.Bean {
     export class GetQuery {
         constructor(_skip: number, _take: number, _sortby: string, _isASC: boolean, _search: string) {
             this.skip = _skip;

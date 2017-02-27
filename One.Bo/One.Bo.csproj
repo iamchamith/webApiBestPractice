@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorBo.cs" />
     <Compile Include="SchoolBo.cs" />
     <Compile Include="StreemBo.cs" />
     <Compile Include="StudentBo.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Utility\Cache\CacheVariables.cs" />
     <Compile Include="Utility\Enums.cs" />
     <Compile Include="Utility\Cache\MemoryCacher.cs" />
+    <Compile Include="Utility\Exceptions\JavascriptException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

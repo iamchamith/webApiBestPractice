@@ -19,5 +19,9 @@ namespace One.Bo.Utility
             User,
             Admin
         }
+        public enum ErrorType {
+            ClientSideError,
+            ServerError
+        }
     }
 }

@@ -33,4 +33,3 @@ var One;
         $(auth.init);
     })(Authontication = One.Authontication || (One.Authontication = {}));
 })(One || (One = {}));
-//# sourceMappingURL=authontication.js.map

@@ -16,3 +16,6 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.M
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.csproj.GenerateResource.Cache
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.createUserAuthonticationTable.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.refreshTables.resources
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.errorTable.resources
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.errorTableException.resources
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.Test.Mockdata\obj\Debug\One.Test.Mockdata.Migrations.addImageColomn.resources

@@ -23,6 +23,11 @@ namespace ONE.App_Start
             Mapper.CreateMap<SchoolBo, SchoolViewModel>();
             Mapper.CreateMap<SchoolViewModel, SchoolBo>();
 
+            Mapper.CreateMap<Error, ErrorBo>();
+            Mapper.CreateMap<ErrorBo, Error>();
+            Mapper.CreateMap<ErrorViewModel, ErrorBo>();
+            Mapper.CreateMap<ErrorBo, ErrorViewModel>();
+
             Mapper.CreateMap<Streem, StreemBo>();
             Mapper.CreateMap<StreemBo, Streem>();
             Mapper.CreateMap<StreemBo, StreemViewModel>();

@@ -30,5 +30,10 @@ namespace One.Test.Mockdata
         {
             get;set;
         }
+
+        public DbSet<Error> Errors
+        {
+            get;set;
+        }
     }
 }

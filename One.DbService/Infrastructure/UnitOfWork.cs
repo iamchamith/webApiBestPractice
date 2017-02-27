@@ -18,6 +18,7 @@ namespace One.DbService.Infrastructure
         GenericRepository<UserAuthontication> UserAuthonticationRepository { get; }
         GenericRepository<School> SchoolRepository { get; }
         GenericRepository<Streem> StreemRepository { get; }
+        GenericRepository<Error> ErrorRepository { get; }
         void Save();
         Task SaveAsync();
         DbContext Context { get; }
@@ -42,6 +43,7 @@ namespace One.DbService.Infrastructure
         private GenericRepository<UserAuthontication> userAuthonticationRepository;
         private GenericRepository<Streem> streemRepository;
         private GenericRepository<School> schoolRepository;
+        private GenericRepository<Error> errorRepository;
         public DbContext Context
         {
             get
@@ -95,6 +97,26 @@ namespace One.DbService.Infrastructure
                     this.streemRepository = new GenericRepository<Streem>(context);
                 }
                 return streemRepository;
+            }
+        }
+ 
+        GenericRepository<Error> IUnitOfWork.ErrorRepository
+        {
+            get
+            {
+                if (this.errorRepository == null)
+                {
+                    this.errorRepository = new GenericRepository<Error>(context);
+                }
+                return errorRepository;
+            }
+        }
+
+        DbContext IUnitOfWork.Context
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 

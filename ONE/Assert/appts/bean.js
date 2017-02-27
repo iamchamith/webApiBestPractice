@@ -7,4 +7,3 @@ var MVVM;
     }());
     MVVM.Student = Student;
 })(MVVM || (MVVM = {}));
-//# sourceMappingURL=bean.js.map

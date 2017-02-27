@@ -61,6 +61,18 @@
     <Compile Include="Migrations\201702250432191_refreshTables.Designer.cs">
       <DependentUpon>201702250432191_refreshTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702260629057_errorTable.cs" />
+    <Compile Include="Migrations\201702260629057_errorTable.Designer.cs">
+      <DependentUpon>201702260629057_errorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260641393_errorTableException.cs" />
+    <Compile Include="Migrations\201702260641393_errorTableException.Designer.cs">
+      <DependentUpon>201702260641393_errorTableException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702261452171_addImageColomn.cs" />
+    <Compile Include="Migrations\201702261452171_addImageColomn.Designer.cs">
+      <DependentUpon>201702261452171_addImageColomn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +100,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702250432191_refreshTables.resx">
       <DependentUpon>201702250432191_refreshTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260629057_errorTable.resx">
+      <DependentUpon>201702260629057_errorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260641393_errorTableException.resx">
+      <DependentUpon>201702260641393_errorTableException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702261452171_addImageColomn.resx">
+      <DependentUpon>201702261452171_addImageColomn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

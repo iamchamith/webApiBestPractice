@@ -38,5 +38,6 @@ namespace One.Domain
         public int StreemId { get; set; }
         [ForeignKey("StreemId")]
         public virtual Streem Streem { get; set; }
+        public string Image { get; set; }
     }
 }

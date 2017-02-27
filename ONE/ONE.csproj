@@ -50,6 +50,10 @@
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CloudinaryDotNet, Version=1.0.30.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>..\packages\CloudinaryDotNet.1.0.30\lib\net40\CloudinaryDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -305,6 +309,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\VM\ErrorViewModel.cs" />
     <Compile Include="Models\VM\SchoolViewModel.cs" />
     <Compile Include="Models\VM\StreemViewModel.cs" />
     <Compile Include="Models\VM\StudentViewModel.cs" />
@@ -321,6 +326,7 @@
     <Content Include="Assert\dts\helpers_ts.js" />
     <Content Include="Assert\dts\postredirect.js" />
     <Content Include="Assert\dts\tsmessage.js" />
+    <Content Include="Assert\img\no.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -422,8 +428,8 @@
     <TypeScriptCompile Include="Assert\appts\bean.ts" />
     <TypeScriptCompile Include="Assert\appts\util\enums.ts" />
     <TypeScriptCompile Include="Assert\appts\util\errors.ts" />
-    <TypeScriptCompile Include="Assert\appts\util\util.ts" />
-    <TypeScriptCompile Include="Assert\appts\util\utilBean.ts" />
+    <TypeScriptCompile Include="Assert\appts\util\tools.ts" />
+    <TypeScriptCompile Include="Assert\appts\util\bean.ts" />
     <TypeScriptCompile Include="Assert\dts\bootstrap.d.ts" />
     <TypeScriptCompile Include="Assert\dts\cryptojs.d.ts" />
     <TypeScriptCompile Include="Assert\dts\CustomFieldsHelpers.ts" />

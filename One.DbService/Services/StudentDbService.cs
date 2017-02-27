@@ -20,13 +20,10 @@ namespace One.DbService.Services
         {
             this.uof = _uof;
         }
-
-
         public IEnumerable<StudentBo> Get(Expression<Func<StudentBo, bool>> filter = null, Func<IQueryable<StudentBo>, IOrderedQueryable<StudentBo>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
-
         public IEnumerable<StudentBo> Get(out int recodeCount, int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null)
         {
             try
@@ -65,7 +62,6 @@ namespace One.DbService.Services
                 throw;
             }
         }
-
         public StudentBo GetByID(object id)
         {
             try
@@ -77,7 +73,6 @@ namespace One.DbService.Services
                 throw;
             }
         }
-
         public async Task<int> InsertAsync(StudentBo entity)
         {
             try
@@ -92,7 +87,6 @@ namespace One.DbService.Services
                 throw;
             }
         }
-
         public async Task DeleteAsync(object id)
         {
             try
@@ -105,7 +99,6 @@ namespace One.DbService.Services
                 throw;
             }
         }
-
         public async Task UpdateAsync(StudentBo entityToUpdate)
         {
             try

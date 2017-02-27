@@ -25,5 +25,8 @@ namespace ONE.Models.VM
         public string Phone { get; set; }
         public int SchoolId { get; set; }
         public int StreemId { get; set; }
+        public string Image { get; set; }
+        public string Extention { get; set; }
+        public bool IsImageChange { get; set; }
     }
 }

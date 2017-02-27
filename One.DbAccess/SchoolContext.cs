@@ -36,6 +36,11 @@ namespace One.DbAccess
         {
             get; set;
         }
+
+        public DbSet<Error> Errors
+        {
+            get;set;
+        }
     }
 
 

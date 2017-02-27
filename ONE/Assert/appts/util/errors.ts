@@ -1,7 +1,6 @@
-﻿module Errors {
+﻿module Util.Errors {
 
     export function handleErrors(e) {
-
         if (e.status == 500) { sweetAlert("Oops...", "Something went wrong!", "error"); }
         else if (e.status == 400) {
             console.log(e.responseJSON);
@@ -18,6 +17,25 @@
         } else if (e.status == 401) {
             alert('unauthorized location. click ok to go loging');
             window.location.replace("http://localhost:49036/ui/login");
+        }
+    }
+    export function logException(e, page): void {
+        console.log(e);
+        try {
+            $.ajax({
+                url: '/api/v0/error',
+                method: 'get',
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify({ page: page, stackTrace: e })
+            }).done((e) => {
+                console.log("===ERROR================");
+                console.log(e);
+                console.log("--------------------------");
+                console.log('error sent to the server');
+                console.log("===//ERROR================");
+            });
+        } catch (err) {
+            console.log(err);
         }
     }
 }
