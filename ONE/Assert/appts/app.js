@@ -3,7 +3,8 @@ var One;
     var student = (function () {
         //globle variables
         var pageSize = 0;
-        var dsStudents = new kendo.data.DataSource({
+        var dsStudents = new kendo.data.DataSource({});
+        var dsOrderList = new kendo.data.DataSource({
             pageSize: pageSize,
         });
         var url = "/api/v1/students";
@@ -83,6 +84,31 @@ var One;
                         method: 'get',
                         contentType: "application/json;charset=utf-8",
                         data: null
+                    });
+                }
+                catch (err) {
+                    throw err;
+                }
+            },
+            ////// sortable list
+            getOrderdList_: function () {
+                try {
+                    return $.ajax({
+                        url: url + '/order',
+                        method: 'get',
+                        data: null
+                    });
+                }
+                catch (err) {
+                    throw err;
+                }
+            },
+            updateOrderdList_: function (e) {
+                try {
+                    return $.ajax({
+                        url: url + '/order',
+                        method: 'post',
+                        data: e
                     });
                 }
                 catch (err) {
@@ -296,6 +322,21 @@ var One;
                 throw err;
             }
         }
+        // sortable
+        function getOrderdList() {
+            //getOrderdList
+        }
+        function viewOrderList(e) {
+            if (e === 'show') {
+                $('.crud').hide(500);
+                $('.sort').show(500);
+            }
+            else {
+                $('.sort').hide(500);
+                $('.crud').show(500);
+            }
+        }
+        function saveOrderList() { }
         function initControllers() {
             try {
                 $("#main-placeHolder").html($("#template-student").html());
@@ -346,6 +387,30 @@ var One;
                     Util.Tools.encodeImageFileAsURL(d.files, function (e) {
                         $('#imgStudent').attr('src', e.f);
                     });
+                });
+                $('#btnOrderList').on('click', function (e) {
+                    var $d = $(e.target);
+                    viewOrderList($d.data('visible'));
+                    if ($d.data('visible') === 'show') {
+                        $d.data('visible', 'hide');
+                        $d.val('Back to View');
+                    }
+                    else {
+                        $d.data('visible', 'show');
+                        $d.val('Show Order List');
+                    }
+                });
+                $("#sortable-basic").kendoSortable({
+                    hint: function (element) {
+                        return element.clone().addClass("hint");
+                    },
+                    placeholder: function (element) {
+                        return element.clone().addClass("placeholder").text("drop here");
+                    },
+                    cursorOffset: {
+                        top: -10,
+                        left: -230
+                    }
                 });
                 validation();
             }

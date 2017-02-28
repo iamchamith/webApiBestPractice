@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using ONE.Classes;
 using static One.Bo.Utility.Enums;
 using One.DbAccess;
+using System.Collections.Generic;
 
 namespace ONE.API
 {
@@ -21,6 +22,7 @@ namespace ONE.API
         IStudentDbService service;
         IStreemDbService streemDbService;
         ISchoolDbService schoolDbService;
+        IEntityOrderService entityOrderService;
         public StudentServiceController() : base()
         {
             this.service = new StudentDbService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
@@ -123,6 +125,23 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
+                return await LogErrors(ex);
+            }
+        }
+
+        [HttpPost]
+        [Route("students/order/")]
+        public async Task<IHttpActionResult> SaveOrder(IEnumerable<EntityOrderViewModel> list)
+        {
+            try
+            {
+                this.entityOrderService = new EntityOrderService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
+                await this.entityOrderService.InsertAsync(list.Select(x => AutoMapper.Mapper.Map<EntityOrderBo>(x)).ToList());
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
                 return await LogErrors(ex);
             }
         }

@@ -3,17 +3,37 @@
     <h1 class="page-header">Student</h1>
     <div class="row">
         <div class="col col-md-6 col-lg-6">
-            <input type="button" class="btn btn-primary" value="Create New" id="btnCreateStudentModelOpen" />
+            <input type="button" class="btn btn-primary crud" value="Create New" id="btnCreateStudentModelOpen" />
+            <input type="button" class="btn btn-primary" value="View Order List" id="btnOrderList" data-visible="show"/>
+            <input type="button" class="btn btn-primary sort" value="Save Sort" id="btnSortSave" style="display:none" />
         </div>
         <div class="col col-md-3 col-lg-3">
-            <input type="text" id="txtSearch" class="form-control pull-right" style="width:100%" placeholder="search" />
+            <input type="text" id="txtSearch" class="form-control pull-right crud" style="width:100%" placeholder="search" />
         </div>
         <div class="col col-md-3 col-lg-3">
-            <input type="button" class="btn btn-primary pull-left" value="Search" id="btnSearch" />
+            <input type="button" class="btn btn-primary pull-left crud" value="Search" id="btnSearch" />
         </div>
     </div>
     <br />
-    <div id="gv-student"></div>
+    <div id="gv-student" class="crud"></div>
+    <div id="lst-order-student" style="display:none" class="sort">
+        <div id="playlist">
+            <ul id="sortable-basic" class="sort">
+                <li class="sortable">Papercut <span>3:04</span></li>
+                <li class="sortable">One Step Closer <span>2:35</span></li>
+                <li class="sortable">With You <span>3:23</span></li>
+                <li class="sortable">Points of Authority <span>3:20</span></li>
+                <li class="sortable">Crawling <span>3:29</span></li>
+                <li class="sortable">Runaway <span>3:03</span></li>
+                <li class="sortable">By Myself <span>3:09</span></li>
+                <li class="sortable">In the End <span>3:36</span></li>
+                <li class="sortable">A Place for My Head <span>3:04</span></li>
+                <li class="sortable">Forgotten <span>3:14</span></li>
+                <li class="sortable">Cure for the Itch <span>2:37</span></li>
+                <li class="sortable">Pushing Me Away <span>3:11</span></li>
+            </ul>
+        </div>
+    </div>
     <input type="hidden" name="recodeCount" id="recodeCount" value="0" />
     <div class="modal fade" id="frmStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">

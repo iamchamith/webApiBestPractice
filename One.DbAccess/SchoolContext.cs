@@ -41,6 +41,11 @@ namespace One.DbAccess
         {
             get;set;
         }
+
+        public DbSet<StudentOrder> StudentOrders
+        {
+            get;set;
+        }
     }
 
 

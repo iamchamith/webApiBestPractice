@@ -3,6 +3,8 @@
         //globle variables
         var pageSize = 0;
         let dsStudents = new kendo.data.DataSource({
+        });
+        let dsOrderList = new kendo.data.DataSource({
             pageSize: pageSize,
         });
         const url = "/api/v1/students";
@@ -67,6 +69,25 @@
                         method: 'get',
                         contentType: "application/json;charset=utf-8",
                         data: null
+                    });
+                } catch (err) { throw err; }
+            },
+            ////// sortable list
+            getOrderdList_(): JQueryXHR {
+                try {
+                    return $.ajax({
+                        url: url + '/order',
+                        method: 'get',
+                        data: null
+                    });
+                } catch (err) { throw err; }
+            },
+            updateOrderdList_(e): JQueryXHR {
+                try {
+                    return $.ajax({
+                        url: url + '/order',
+                        method: 'post',
+                        data: e
                     });
                 } catch (err) { throw err; }
             }
@@ -260,6 +281,24 @@
                 });
             } catch (err) { throw err; }
         }
+
+        // sortable
+        function getOrderdList() {
+
+            //getOrderdList
+        }
+        function viewOrderList(e) {
+            if (e === 'show') {
+                $('.crud').hide(500);
+                $('.sort').show(500);
+            } else {
+                $('.sort').hide(500);
+                $('.crud').show(500);
+            }
+        }
+
+        function saveOrderList() { }
+
         function initControllers() {
             try {
                 $("#main-placeHolder").html($("#template-student").html());
@@ -311,6 +350,30 @@
                     Util.Tools.encodeImageFileAsURL(d.files, (e) => {
                         $('#imgStudent').attr('src', e.f);
                     });
+                });
+                $('#btnOrderList').on('click', (e) => {
+                    var $d = $(e.target);
+                    viewOrderList($d.data('visible'));
+                    if ($d.data('visible') === 'show') {
+                        $d.data('visible', 'hide');
+                        $d.val('Back to View');
+                    } else {
+                        $d.data('visible', 'show');
+                        $d.val('Show Order List');
+                    }
+                });
+
+                $("#sortable-basic").kendoSortable({
+                    hint: function (element) {
+                        return element.clone().addClass("hint");
+                    },
+                    placeholder: function (element) {
+                        return element.clone().addClass("placeholder").text("drop here");
+                    },
+                    cursorOffset: {
+                        top: -10,
+                        left: -230
+                    }
                 });
                 validation();
             } catch (err) { throw err; }

@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201702261451037_addImageColomn.Designer.cs">
       <DependentUpon>201702261451037_addImageColomn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702271629295_addEntityOrderTable.cs" />
+    <Compile Include="Migrations\201702271629295_addEntityOrderTable.Designer.cs">
+      <DependentUpon>201702271629295_addEntityOrderTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SchoolContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702261451037_addImageColomn.resx">
       <DependentUpon>201702261451037_addImageColomn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702271629295_addEntityOrderTable.resx">
+      <DependentUpon>201702271629295_addEntityOrderTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

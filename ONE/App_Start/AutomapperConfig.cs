@@ -18,6 +18,13 @@ namespace ONE.App_Start
             Mapper.CreateMap<StudentViewModel, StudentBo>();
             Mapper.CreateMap<StudentBo, Student>();
 
+            Mapper.CreateMap<EntityOrderViewModel, EntityOrderBo>();
+            Mapper.CreateMap<EntityOrderBo, EntityOrderViewModel>();
+
+            Mapper.CreateMap<EntityOrderBo, StudentOrder>();
+            Mapper.CreateMap<StudentOrder, EntityOrderBo>();
+       
+
             Mapper.CreateMap<School, SchoolBo>();
             Mapper.CreateMap<SchoolBo, School>();
             Mapper.CreateMap<SchoolBo, SchoolViewModel>();

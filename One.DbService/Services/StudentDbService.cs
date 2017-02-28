@@ -51,7 +51,8 @@ namespace One.DbService.Services
                     }
                 }
                 // query
-                var res = uof.StudentRepository.Get(filter: filter, orderBy: orderBy, skip: skip, take: take);
+                var res = uof.StudentRepository.Get(filter: filter, orderBy: orderBy, skip: skip, take: take)
+                    .Select(p => new Student { Id = p.Id, Name = p.Name, Email = p.Email });
                 // add to the cache
                 var result = res.Select(x => Mapper.Map<StudentBo>(x)).ToList();
                 recodeCount = uof.StudentRepository.GetRecodeCount();

@@ -54,6 +54,7 @@
     <Compile Include="Streem.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentOrder.cs" />
     <Compile Include="UserAuthontication.cs" />
     <Compile Include="Utility\IDbEntity.cs" />
   </ItemGroup>

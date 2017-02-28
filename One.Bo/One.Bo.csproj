@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityOrderBo.cs" />
     <Compile Include="ErrorBo.cs" />
     <Compile Include="SchoolBo.cs" />
     <Compile Include="StreemBo.cs" />

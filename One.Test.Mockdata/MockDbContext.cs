@@ -35,5 +35,10 @@ namespace One.Test.Mockdata
         {
             get;set;
         }
+
+        public DbSet<StudentOrder> StudentOrders
+        {
+            get;set;
+        }
     }
 }

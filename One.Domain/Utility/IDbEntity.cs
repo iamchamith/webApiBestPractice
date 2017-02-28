@@ -13,6 +13,7 @@ namespace One.Domain.Utility
         DbSet<School> Schools { get; set; }
         DbSet<Streem> Streems { get; set; }
         DbSet<Error> Errors { get; set; }
+        DbSet<StudentOrder> StudentOrders { get; set; }
         DbSet<UserAuthontication> UserAuthontications { get; set; }
     }
 }

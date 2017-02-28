@@ -74,12 +74,14 @@
     <Compile Include="Infrastructure\GenericRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Interfaces\IEntityOrderService.cs" />
     <Compile Include="Interfaces\IErrorDbService.cs" />
     <Compile Include="Interfaces\ISchoolDbService.cs" />
     <Compile Include="Interfaces\IStudentDbService.cs" />
     <Compile Include="Interfaces\IUserAuthonticationDbService.cs" />
     <Compile Include="Interfaces\IStreemDbService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EntityOrderService.cs" />
     <Compile Include="Services\ErrorDbService.cs" />
     <Compile Include="Services\SchoolDbService.cs" />
     <Compile Include="Services\StreemDbService.cs" />

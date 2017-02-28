@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ONE.Models.VM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -17,5 +18,6 @@ namespace ONE.API
         Task<IHttpActionResult> Update(T item, int id);
         Task<IHttpActionResult> Get(int skip, int take, string sortBy, bool isASC, string search);
         Task<IHttpActionResult> Get(int id);
+        Task<IHttpActionResult> SaveOrder(IEnumerable<EntityOrderViewModel> list);
     }
 }

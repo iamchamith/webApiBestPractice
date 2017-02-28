@@ -25,3 +25,4 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.errorTable.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.errorTableException.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.addImageColomn.resources
+D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.addEntityOrderTable.resources
