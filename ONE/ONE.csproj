@@ -302,7 +302,6 @@
     <Compile Include="Classes\Utility.cs" />
     <Compile Include="Classes\ValidateModelAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -323,17 +322,21 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Assert\css\appcss\appstyle.css" />
-    <Content Include="Assert\dts\CustomFieldsHelpers.js" />
-    <Content Include="Assert\dts\helpers_ts.js" />
-    <Content Include="Assert\dts\postredirect.js" />
-    <Content Include="Assert\dts\tsmessage.js" />
+    <Content Include="Pages\templates\authontication.html" />
+    <Content Include="Pages\templates\errors.html" />
+    <Content Include="Pages\templates\report.html" />
+    <Content Include="Pages\templates\student.html" />
+    <Content Include="Scripts\typings\others\CustomFieldsHelpers.js" />
+    <Content Include="Scripts\typings\others\helpers_ts.js" />
+    <Content Include="Scripts\typings\others\postredirect.js" />
+    <Content Include="Scripts\typings\others\tsmessage.js" />
     <Content Include="Assert\img\no.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="hTML\some.html" />
+    <Content Include="Pages\default.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -360,10 +363,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assert\dts\CustomFieldsHelpers.js.map" />
-    <Content Include="Assert\dts\helpers_ts.js.map" />
-    <Content Include="Assert\dts\postredirect.js.map" />
-    <Content Include="Assert\dts\tsmessage.js.map" />
+    <Content Include="Scripts\typings\others\CustomFieldsHelpers.js.map" />
+    <Content Include="Scripts\typings\others\helpers_ts.js.map" />
+    <Content Include="Scripts\typings\others\postredirect.js.map" />
+    <Content Include="Scripts\typings\others\tsmessage.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -390,9 +393,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\UI\Index.cshtml" />
-    <Content Include="Views\UI\_Student.cshtml" />
-    <Content Include="Views\UI\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -424,31 +424,40 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Assert\appts\app.ts" />
+    <TypeScriptCompile Include="Assert\appts\student.ts" />
     <TypeScriptCompile Include="Assert\appts\authontication.ts" />
     <TypeScriptCompile Include="Assert\appts\bean.ts" />
+    <TypeScriptCompile Include="Assert\appts\router.ts" />
     <TypeScriptCompile Include="Assert\appts\util\enums.ts" />
     <TypeScriptCompile Include="Assert\appts\util\errors.ts" />
     <TypeScriptCompile Include="Assert\appts\util\tools.ts" />
     <TypeScriptCompile Include="Assert\appts\util\bean.ts" />
-    <TypeScriptCompile Include="Assert\dts\bootstrap.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\cryptojs.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\CustomFieldsHelpers.ts" />
-    <TypeScriptCompile Include="Assert\dts\google.maps.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\helpers_ts.ts" />
-    <TypeScriptCompile Include="Assert\dts\jquery.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\jquery.fitvids.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\jquery.placeholder.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\kendo.all.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\leaflet.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\moment-timezone.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\moment.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\notifyjs.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\postredirect.ts" />
-    <TypeScriptCompile Include="Assert\dts\stripe.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\sweetalert.d.ts" />
-    <TypeScriptCompile Include="Assert\dts\tsmessage.ts" />
-    <TypeScriptCompile Include="Assert\dts\underscore.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\cryptojs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\CustomFieldsHelpers.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\google.maps.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\helpers_ts.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\jquery.fitvids.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\jquery.placeholder.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\kendo.all.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\leaflet.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\moment-timezone.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\moment.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\notifyjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\postredirect.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\stripe.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\sweetalert.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\tsmessage.ts" />
+    <TypeScriptCompile Include="Scripts\typings\others\underscore.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

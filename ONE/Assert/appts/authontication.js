@@ -30,7 +30,10 @@ var One;
                 }
             };
         })();
-        $(auth.init);
+        function init() {
+            auth.init();
+        }
+        Authontication.init = init;
     })(Authontication = One.Authontication || (One.Authontication = {}));
 })(One || (One = {}));
 //# sourceMappingURL=authontication.js.map
