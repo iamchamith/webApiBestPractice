@@ -10,9 +10,7 @@ namespace ONE.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return Redirect("http://localhost:49036/Pages/default.html");
         }
     }
 }

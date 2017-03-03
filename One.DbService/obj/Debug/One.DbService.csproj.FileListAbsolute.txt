@@ -27,3 +27,32 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbService\obj\Debug\One.DbService.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbService\obj\Debug\One.DbService.pdb
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbService\bin\Debug\One.Test.Mockdata.dll
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbService\bin\Debug\One.Test.Mockdata.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.DbService.dll.config
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.DbService.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.DbService.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\AutoMapper.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\EntityFramework.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\EntityFramework.SqlServer.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.Unity.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.Bo.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.DbAccess.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.Domain.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.Test.Mockdata.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.Bo.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.DbAccess.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.Domain.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\One.Test.Mockdata.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\AutoMapper.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\EntityFramework.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\EntityFramework.SqlServer.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.Unity.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\obj\Debug\One.DbService.csprojResolveAssemblyReference.cache
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\obj\Debug\One.DbService.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbService\obj\Debug\One.DbService.pdb

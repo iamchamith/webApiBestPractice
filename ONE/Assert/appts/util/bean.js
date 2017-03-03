@@ -15,3 +15,4 @@ var Util;
         Bean.GetQuery = GetQuery;
     })(Bean = Util.Bean || (Util.Bean = {}));
 })(Util || (Util = {}));
+//# sourceMappingURL=bean.js.map

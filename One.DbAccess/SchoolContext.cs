@@ -16,7 +16,7 @@ namespace One.DbAccess
         {
 
         }
-        public SchoolContext() : base(@"Data Source=DELL\SQLEXPRESS;Initial Catalog=ASS_1;Integrated Security=True;Pooling=False")
+        public SchoolContext() : base(@"Data Source=JET-DEV03\TOWNSUITE;Initial Catalog=ONE;Integrated Security=True;")
         {
 
         }

@@ -11,7 +11,7 @@ namespace One.Test.Mockdata
 {
     public class MockDbContext : DbContext, IContext
     {
-        public MockDbContext() : base(@"Data Source=DELL\SQLEXPRESS;Initial Catalog=ASS_1_Test;Integrated Security=True;Pooling=False")
+        public MockDbContext() : base(@"Data Source=JET-DEV03\TOWNSUITE;Initial Catalog=ONE_TEST;Integrated Security=True;")
         {
 
         }

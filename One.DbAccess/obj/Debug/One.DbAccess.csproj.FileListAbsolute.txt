@@ -26,3 +26,31 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.errorTableException.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.addImageColomn.resources
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.DbAccess\obj\Debug\One.DbAccess.Migrations.addEntityOrderTable.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.DbAccess.dll.config
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.DbAccess.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.DbAccess.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\AutoMapper.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\EntityFramework.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.AutomationTest.exe
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.Bo.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.Domain.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\WebDriver.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.AutomationTest.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.Bo.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\One.Domain.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\AutoMapper.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\EntityFramework.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\bin\Debug\WebDriver.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.csprojResolveAssemblyReference.cache
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.init.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.createUserAuthonticationTable.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.refreshTables.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.errorTable.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.errorTableException.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.addImageColomn.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.Migrations.addEntityOrderTable.resources
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.csproj.GenerateResource.Cache
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.DbAccess\obj\Debug\One.DbAccess.pdb

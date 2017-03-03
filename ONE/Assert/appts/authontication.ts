@@ -33,5 +33,7 @@ module One.Authontication {
 
     })();
 
-    $(auth.init);
+    export function init() {
+        auth.init();
+    }
 }
