@@ -36,7 +36,26 @@ namespace One.DbService.Services
         {
             try
             {
-                return this.uow.StudentOrder.Get(null, null, null).Select(x => AutoMapper.Mapper.Map<EntityOrderBo>(x)).ToList();
+                var d = (from s in this.uow.Context.Students
+                         join o in this.uow.Context.StudentOrders
+                             on s.Id equals o.EntityId
+                         select new
+                         {
+                             OrderId = o.Id,
+                             Name = s.Name,
+                             EntityId = s.Id
+                         }).OrderBy(m => m.OrderId);
+                var lst = new List<EntityOrderBo>();
+                foreach (var item in d)
+                {
+                    lst.Add(new EntityOrderBo
+                    {
+                        Id = item.OrderId,
+                        EntityId = item.EntityId,
+                        Name = item.Name
+                    });
+                }
+                return lst;
             }
             catch (Exception e)
             {
@@ -45,7 +64,7 @@ namespace One.DbService.Services
         }
 
 
-        public async Task InsertAsync(List<EntityOrderBo> list)
+        public async Task UpdateAsync(List<EntityOrderBo> list)
         {
             try
             {
@@ -55,6 +74,19 @@ namespace One.DbService.Services
             }
             catch (Exception e)
             {
+                throw;
+            }
+        }
+
+        public async Task InsertTrigger(int entityId)
+        {
+            try
+            {
+                 uow.EntityOrderRepository.Insert(new StudentOrder { EntityId = entityId });
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }
@@ -77,6 +109,11 @@ namespace One.DbService.Services
         }
         [Obsolete("NotImplementedException")]
         public Task DeleteAsync(object id)
+        {
+            throw new NotImplementedException();
+        }
+        [Obsolete("NotImplementedException")]
+        public Task InsertAsync(List<EntityOrderBo> list)
         {
             throw new NotImplementedException();
         }

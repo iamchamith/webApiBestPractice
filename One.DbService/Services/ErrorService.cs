@@ -12,10 +12,10 @@ using AutoMapper;
 
 namespace One.DbService.Services
 {
-    public class ErrorDbService : IErrorDbService
+    public class ErrorService : IErrorDbService
     {
         IUnitOfWork uof;
-        public ErrorDbService(IUnitOfWork _uof)
+        public ErrorService(IUnitOfWork _uof)
         {
             this.uof = _uof;
         }

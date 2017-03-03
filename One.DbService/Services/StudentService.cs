@@ -13,13 +13,16 @@ using One.Bo.Utility;
 
 namespace One.DbService.Services
 {
-    public class StudentDbService : IStudentDbService
+    public class StudentService : IStudentDbService
     {
-        IUnitOfWork uof;
-        public StudentDbService(IUnitOfWork _uof)
+        private IUnitOfWork uow;
+        private IEntityOrderService sortableService;
+        public StudentService(IUnitOfWork uow)
         {
-            this.uof = _uof;
+            this.uow = uow;
+            this.sortableService = new EntityOrderService(uow);
         }
+        [Obsolete("NotImplementedException")]
         public IEnumerable<StudentBo> Get(Expression<Func<StudentBo, bool>> filter = null, Func<IQueryable<StudentBo>, IOrderedQueryable<StudentBo>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
@@ -51,11 +54,11 @@ namespace One.DbService.Services
                     }
                 }
                 // query
-                var res = uof.StudentRepository.Get(filter: filter, orderBy: orderBy, skip: skip, take: take)
+                var res = uow.StudentRepository.Get(filter: filter, orderBy: orderBy, skip: skip, take: take)
                     .Select(p => new Student { Id = p.Id, Name = p.Name, Email = p.Email });
                 // add to the cache
                 var result = res.Select(x => Mapper.Map<StudentBo>(x)).ToList();
-                recodeCount = uof.StudentRepository.GetRecodeCount();
+                recodeCount = uow.StudentRepository.GetRecodeCount();
                 return result;
             }
             catch (Exception ex)
@@ -67,7 +70,7 @@ namespace One.DbService.Services
         {
             try
             {
-                return Mapper.Map<StudentBo>(uof.StudentRepository.GetByID(id));
+                return Mapper.Map<StudentBo>(uow.StudentRepository.GetByID(id));
             }
             catch
             {
@@ -79,8 +82,9 @@ namespace One.DbService.Services
             try
             {
                 var obj = Mapper.Map<Student>(entity);
-                uof.StudentRepository.Insert(obj);
-                await uof.SaveAsync();
+                uow.StudentRepository.Insert(obj);
+                await sortableService.InsertTrigger(uow.Context.Students.Max(p => p.Id) + 1);
+                await uow.SaveAsync();
                 return obj.Id;
             }
             catch
@@ -92,8 +96,8 @@ namespace One.DbService.Services
         {
             try
             {
-                uof.StudentRepository.Delete(id);
-                await uof.SaveAsync();
+                uow.StudentRepository.Delete(id);
+                await uow.SaveAsync();
             }
             catch
             {
@@ -104,8 +108,8 @@ namespace One.DbService.Services
         {
             try
             {
-                uof.StudentRepository.Update(Mapper.Map<Student>(entityToUpdate));
-                await uof.SaveAsync();
+                uow.StudentRepository.Update(Mapper.Map<Student>(entityToUpdate));
+                await uow.SaveAsync();
             }
             catch
             {

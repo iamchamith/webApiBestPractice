@@ -23,7 +23,7 @@ namespace ONE.API
         Account account = new Account("ddrdp74on", "542442481541475", "TyAv9ZGUpCinkwFdDCreS1TSLWI");
         public BaseServiceController()
         {
-            this.errorService = new ErrorDbService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
+            this.errorService = new ErrorService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
         }
         protected string connectionString = string.Empty;
 
@@ -42,7 +42,7 @@ namespace ONE.API
                 default:
                     throw new ArgumentException();
             }
-            this.errorService = new ErrorDbService(ufo);
+            this.errorService = new ErrorService(ufo);
         }
         [HttpGet]
         [Route("error")]

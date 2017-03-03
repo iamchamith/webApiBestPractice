@@ -54,7 +54,9 @@ namespace One.DbAccess.Migrations
                 new UserAuthontication {Email="iamchamith@gmail.com",Role=EUserRole.Admin,Password="123",UserId="123" },
                 new UserAuthontication { Email = "damith@gmail.com", Role = EUserRole.User, Password = "123", UserId = "456" }
                 );
-           
+            context.Database.ExecuteSqlCommand(@"insert into StudentOrder(EntityId)
+                values ('1'), ('2'), ('3'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9'), ('10'),
+                    ('11'), ('12'), ('13'), ('14'), ('15'), ('16'), ('17'), ('18'), ('19'), ('20')");
         }
     }
 }

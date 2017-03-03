@@ -42,7 +42,7 @@ namespace ONE.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            var loginService = new UserAuthonticationDbService(new UnitOfWork(new SchoolContext(), One.Bo.Utility.Enums.ERunType.Debug));
+            var loginService = new UserAuthonticationService(new UnitOfWork(new SchoolContext(), One.Bo.Utility.Enums.ERunType.Debug));
              
             try
             {
