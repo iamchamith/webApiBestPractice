@@ -12,10 +12,10 @@ using One.Domain;
 
 namespace One.DbService.Services
 {
-    public class UserAuthonticationDbService  
+    public class UserAuthonticationService  
     {
         IUnitOfWork uof;
-        public UserAuthonticationDbService(IUnitOfWork _uof)
+        public UserAuthonticationService(IUnitOfWork _uof)
         {
             this.uof = _uof;
         }

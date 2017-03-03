@@ -35,6 +35,8 @@ namespace One.Test.Mockdata.Migrations
                 new UserAuthontication { Email = "iamchamith@gmail.com", Role = EUserRole.Admin, Password = "123", UserId = "123" },
                 new UserAuthontication { Email = "damith@gmail.com", Role = EUserRole.User, Password = "123", UserId = "456" }
                 );
+
+            context.Database.ExecuteSqlCommand("insert into StudentOrder(EntityId) values ('1'),  ('2')");
         }
     }
 }

@@ -10,7 +10,8 @@ namespace One.DbService.Interfaces
 {
     public interface IEntityOrderService : IRepositoryRead<EntityOrderBo>, IRepositoryUpdateAsync<EntityOrderBo>
     {
-          Task InsertAsync(List<EntityOrderBo> list);
-          Task DeleteAsync();
+        Task InsertAsync(List<EntityOrderBo> list);
+        Task DeleteAsync();
+        Task InsertTrigger(int entityId);
     }
 }

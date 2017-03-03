@@ -17,7 +17,7 @@ namespace ONE.App_Start
         public static void Register(HttpConfiguration config)
         {
             var container = new UnityContainer();
-            container.RegisterType<IStudentDbService, StudentDbService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IStudentDbService, StudentService>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
         }
     }

@@ -1,45 +1,45 @@
-﻿using AutoMapper;
-using One.Bo;
-using One.Bo.Utility;
-using One.DbService.Infrastructure;
+﻿using One.DbService.Infrastructure;
 using One.DbService.Interfaces;
-using One.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using One.Bo;
+using System.Linq.Expressions;
+using One.Bo.Utility;
+using AutoMapper;
+using One.Domain;
 
 namespace One.DbService.Services
 {
-    public class StreemDbService : IStreemDbService
+    public class SchoolService : ISchoolDbService
     {
         IUnitOfWork uof;
-        public StreemDbService(IUnitOfWork _uof)
+        public SchoolService(IUnitOfWork _uof)
         {
             this.uof = _uof;
         }
 
-        public IEnumerable<StreemBo> Get(Expression<Func<StreemBo, bool>> filter = null, Func<IQueryable<StreemBo>, IOrderedQueryable<StreemBo>> orderBy = null, string includeProperties = "")
+        public IEnumerable<SchoolBo> Get(Expression<Func<SchoolBo, bool>> filter = null, Func<IQueryable<SchoolBo>, IOrderedQueryable<SchoolBo>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<StreemBo> Get(out int recodeCount, int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null)
+        public IEnumerable<SchoolBo> Get(out int recodeCount, int skip = 0, int take = 0, string sortBy = "", bool isASC = false, string search = null)
         {
             try
             {
-                var details = MemoryCacher.GetValue(CacheVariables.StreemList.ToString());
+                var details = MemoryCacher.GetValue(CacheVariables.SchoolList.ToString());
                 if (details != null)
                 {
                     recodeCount = 0;
-                    return (IEnumerable<StreemBo>)details;
+                    return (IEnumerable<SchoolBo>)details;
                 }
                 else
                 {
-                    Expression<Func<Streem, bool>> filter = null;
-                    Func<IQueryable<Streem>, IOrderedQueryable<Streem>> orderBy = null;
+                    Expression<Func<School, bool>> filter = null;
+                    Func<IQueryable<School>, IOrderedQueryable<School>> orderBy = null;
                     if (!string.IsNullOrWhiteSpace(search))
                     {
                         filter = (e) => e.Name.ToLower().Trim().StartsWith(search.ToLower().Trim());
@@ -60,11 +60,11 @@ namespace One.DbService.Services
                         }
                     }
                     // query
-                    var res = uof.StreemRepository.Get(filter, orderBy, "");
+                    var res = uof.SchoolRepository.Get(filter, orderBy, "");
                     // add to the cache
-                    var result = res.Select(x => Mapper.Map<StreemBo>(x)).ToList();
-                    MemoryCacher.Add(CacheVariables.StreemList.ToString(), result);
-                    recodeCount = uof.StreemRepository.GetRecodeCount();
+                    var result = res.Select(x => Mapper.Map<SchoolBo>(x)).ToList();
+                    MemoryCacher.Add(CacheVariables.SchoolList.ToString(), result);
+                    recodeCount = uof.SchoolRepository.GetRecodeCount();
                     return result;
                 }
             }
@@ -74,9 +74,10 @@ namespace One.DbService.Services
             }
         }
 
-        public StreemBo GetByID(object id)
+        public SchoolBo GetByID(object id)
         {
             throw new NotImplementedException();
         }
+
     }
 }

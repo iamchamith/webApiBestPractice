@@ -19,5 +19,6 @@ namespace ONE.API
         Task<IHttpActionResult> Get(int skip, int take, string sortBy, bool isASC, string search);
         Task<IHttpActionResult> Get(int id);
         Task<IHttpActionResult> SaveOrder(IEnumerable<EntityOrderViewModel> list);
+        Task<IHttpActionResult> GetOrder();
     }
 }

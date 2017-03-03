@@ -19,7 +19,7 @@ namespace One.DbService.Infrastructure
         GenericRepository<School> SchoolRepository { get; }
         GenericRepository<Streem> StreemRepository { get; }
         GenericRepository<Error> ErrorRepository { get; }
-        GenericRepository<StudentOrder> StudentOrder { get; }
+        GenericRepository<StudentOrder> EntityOrderRepository { get; }
         void Save();
         Task SaveAsync();
         SchoolContext Context { get; }
@@ -45,7 +45,7 @@ namespace One.DbService.Infrastructure
         private GenericRepository<Streem> streemRepository;
         private GenericRepository<School> schoolRepository;
         private GenericRepository<Error> errorRepository;
-        private GenericRepository<StudentOrder> studentOrder;
+        private GenericRepository<StudentOrder> entityOrderRepository;
         public SchoolContext Context
         {
             get
@@ -114,15 +114,15 @@ namespace One.DbService.Infrastructure
             }
         }
 
-        public GenericRepository<StudentOrder> StudentOrder
+        public GenericRepository<StudentOrder> EntityOrderRepository
         {
             get
             {
-                if (this.studentOrder == null)
+                if (this.entityOrderRepository == null)
                 {
-                    this.studentOrder = new GenericRepository<StudentOrder>(context);
+                    this.entityOrderRepository = new GenericRepository<StudentOrder>(context);
                 }
-                return studentOrder;
+                return entityOrderRepository;
             }
         }
 

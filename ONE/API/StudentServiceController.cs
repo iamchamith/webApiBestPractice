@@ -25,12 +25,12 @@ namespace ONE.API
         IEntityOrderService entityOrderService;
         public StudentServiceController() : base()
         {
-            this.service = new StudentDbService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
+            this.service = new StudentService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
         }
         //test
         public StudentServiceController(IUnitOfWork uow) : base(uow, ERunType.Test)
         {
-            this.service = new StudentDbService(uow);
+            this.service = new StudentService(uow);
         }
         [HttpGet]
         [Route("students/lookup")]
@@ -39,8 +39,8 @@ namespace ONE.API
             try
             {
                 var uow = new UnitOfWork(new SchoolContext(), ERunType.Debug);
-                streemDbService = new StreemDbService(uow);
-                schoolDbService = new SchoolDbService(uow);
+                streemDbService = new StreemService(uow);
+                schoolDbService = new SchoolService(uow);
                 int recodeCount = 0;
                 return Ok<object>(new
                 {
@@ -60,7 +60,7 @@ namespace ONE.API
             try
             {
                 int recodeCount = 0;
-                var res =  service.Get(out recodeCount, skip, take, sortBy, isASC, search).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).ToList();
+                var res = service.Get(out recodeCount, skip, take, sortBy, isASC, search).Select(x => AutoMapper.Mapper.Map<StudentViewModel>(x)).ToList();
                 return Ok<object>(new { result = res, recodeCount = recodeCount });
             }
             catch (Exception ex)
@@ -90,7 +90,7 @@ namespace ONE.API
         {
             try
             {
-                int id = await ((StudentDbService)service).InsertAsync(Mapper.Map<StudentBo>(item));
+                int id = await ((StudentService)service).InsertAsync(Mapper.Map<StudentBo>(item));
                 return Ok<int>(id);
             }
             catch (Exception ex)
@@ -129,6 +129,21 @@ namespace ONE.API
             }
         }
 
+        [HttpGet]
+        [Route("students/order/")]
+        public async Task<IHttpActionResult> GetOrder()
+        {
+            try
+            {
+                this.entityOrderService = new EntityOrderService(new UnitOfWork(new SchoolContext(), ERunType.Debug));
+                return Ok<IEnumerable<EntityOrderViewModel>>(this.entityOrderService.Get().ToList().Select(x => AutoMapper.Mapper.Map<EntityOrderViewModel>(x)));
+            }
+            catch (Exception ex)
+            {
+                return await LogErrors(ex);
+            }
+        }
+
         [HttpPost]
         [Route("students/order/")]
         public async Task<IHttpActionResult> SaveOrder(IEnumerable<EntityOrderViewModel> list)
@@ -141,7 +156,6 @@ namespace ONE.API
             }
             catch (Exception ex)
             {
-
                 return await LogErrors(ex);
             }
         }
