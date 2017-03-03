@@ -11,3 +11,4 @@ var Util;
         var Crud = Enums.Crud;
     })(Enums = Util.Enums || (Util.Enums = {}));
 })(Util || (Util = {}));
+//# sourceMappingURL=enums.js.map

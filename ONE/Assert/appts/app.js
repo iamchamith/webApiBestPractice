@@ -442,3 +442,4 @@ var One;
     });
     $(function () { student().init(); });
 })(One || (One = {}));
+//# sourceMappingURL=app.js.map

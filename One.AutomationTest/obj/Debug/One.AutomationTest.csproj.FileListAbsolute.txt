@@ -15,3 +15,20 @@ D:\INTERVIEW 2017\PRACTICE\1\ONE\One.AutomationTest\bin\Debug\WebDriver.xml
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.AutomationTest\bin\Debug\One.AutomationTest.exe.config
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.AutomationTest\bin\Debug\One.AutomationTest.exe
 D:\INTERVIEW 2017\PRACTICE\1\ONE\One.AutomationTest\obj\Debug\One.AutomationTest.exe
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\One.AutomationTest.exe.config
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\One.AutomationTest.exe
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\One.AutomationTest.pdb
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\EntityFramework.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\EntityFramework.SqlServer.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\ThoughtWorks.Selenium.Core.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\WebDriver.dll
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\EntityFramework.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\EntityFramework.SqlServer.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\Selenium.WebDriverBackedSelenium.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\ThoughtWorks.Selenium.Core.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\bin\Debug\WebDriver.xml
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\obj\Debug\One.AutomationTest.csprojResolveAssemblyReference.cache
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\obj\Debug\One.AutomationTest.exe
+E:\EDUCATION\WEB API BEST PRACTIES\webApiBestPractice\One.AutomationTest\obj\Debug\One.AutomationTest.pdb
